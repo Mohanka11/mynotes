@@ -196,3 +196,7 @@ table th, table td {
 table th {
     background: #f1f5f9;
 }
+.acc-content {
+    display: none;
+    background: #ffffff;
+}
