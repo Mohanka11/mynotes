@@ -3,129 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Computer with AI Study Notes</title>
+    <title>Computer with AI - Study Notes</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="portal-layout">
+<body>
 
-    <!-- Top Navigation Bar for Mobile -->
-    <header class="top-nav">
-        <button id="menu-btn" aria-label="Toggle Menu">☰ Chapters</button>
-        <span class="portal-title">📚 Computer with AI</span>
+    <!-- App Top Bar -->
+    <header class="app-header">
+        <button id="back-btn" class="nav-btn" style="display: none;">← Back</button>
+        <h1 id="header-title">📚 Computer with AI</h1>
     </header>
 
-    <!-- Dim Background Overlay -->
-    <div id="drawer-backdrop"></div>
+    <!-- Main Container -->
+    <div class="app-body">
 
-    <div class="portal-wrapper">
-        <!-- Slide-out Navigation Drawer -->
-        <aside id="sidebar">
-            <div class="sidebar-header">
-                <h2>📚 Computer with AI</h2>
-                <p>Class 5 to 8 Study Notes</p>
-            </div>
+        <!-- Screen 1: Accordion Menu -->
+        <main id="menu-view" class="view-screen active">
+            <p class="subtitle">Class 5 to 8 Study Notes Repository</p>
 
-            <div class="accordion-container">
+            <div class="accordion-list">
                 <!-- Class 5 -->
-                <button class="acc-btn">Class 5 Computer With AI <span class="arrow">▶</span></button>
-                <div class="acc-panel">
-                    <ul class="chapter-list">
-                        <li><a class="chapter-link active-link" data-src="c5_ch1.html">Ch 1: Evolution of Computers</a></li>
-                        <li><a class="chapter-link" data-src="c5_ch2.html">Ch 2: Advanced Features of Word</a></li>
-                    </ul>
+                <div class="acc-item">
+                    <button class="acc-header">Class 5 Computer With AI <span class="arrow">▶</span></button>
+                    <div class="acc-content">
+                        <a class="chapter-link" data-src="c5_ch1.html">Ch 1: Evolution of Computers</a>
+                        <a class="chapter-link" data-src="c5_ch2.html">Ch 2: Advanced Features of Word</a>
+                    </div>
                 </div>
 
                 <!-- Class 6 -->
-                <button class="acc-btn">Class 6 Computer With AI <span class="arrow">▶</span></button>
-                <div class="acc-panel">
-                    <ul class="chapter-list">
-                        <li><a class="chapter-link" data-src="c6_ch1.html">Ch 1: Computer Languages</a></li>
-                        <li><a class="chapter-link" data-src="c6_ch2.html">Ch 2: Working with Windows</a></li>
-                    </ul>
+                <div class="acc-item">
+                    <button class="acc-header">Class 6 Computer With AI <span class="arrow">▶</span></button>
+                    <div class="acc-content">
+                        <a class="chapter-link" data-src="c6_ch1.html">Ch 1: Computer Languages</a>
+                        <a class="chapter-link" data-src="c6_ch2.html">Ch 2: Working with Windows</a>
+                    </div>
                 </div>
 
                 <!-- Class 7 -->
-                <button class="acc-btn">Class 7 Computer With AI <span class="arrow">▶</span></button>
-                <div class="acc-panel">
-                    <ul class="chapter-list">
-                        <li><a class="chapter-link" data-src="c7_ch1.html">Ch 1: Number System</a></li>
-                        <li><a class="chapter-link" data-src="c7_ch2.html">Ch 2: Formulas in Excel</a></li>
-                    </ul>
+                <div class="acc-item">
+                    <button class="acc-header">Class 7 Computer With AI <span class="arrow">▶</span></button>
+                    <div class="acc-content">
+                        <a class="chapter-link" data-src="c7_ch1.html">Ch 1: Number System</a>
+                        <a class="chapter-link" data-src="c7_ch2.html">Ch 2: Formulas in Excel</a>
+                    </div>
                 </div>
 
                 <!-- Class 8 -->
-                <button class="acc-btn active">Class 8 Computer With AI <span class="arrow">▼</span></button>
-                <div class="acc-panel" style="max-height: 500px;">
-                    <ul class="chapter-list">
-                        <li><a class="chapter-link" data-src="c8_ch1.html">Ch 1: Computer Networks</a></li>
-                        <li><a class="chapter-link" data-src="c8_ch2.html">Ch 2: Learn To Use MS Access 2016</a></li>
-                        <li><a class="chapter-link pending">Ch 3: Robotics</a></li>
-                        <li><a class="chapter-link pending">Ch 4: More On CSS</a></li>
-                        <li><a class="chapter-link pending">Ch 5: Lists And Tables In HTML</a></li>
-                        <li><a class="chapter-link pending">Ch 6: Cloud Based Computing</a></li>
-                    </ul>
+                <div class="acc-item">
+                    <button class="acc-header">Class 8 Computer With AI <span class="arrow">▶</span></button>
+                    <div class="acc-content">
+                        <a class="chapter-link" data-src="c8_ch1.html">Ch 1: Computer Networks</a>
+                        <a class="chapter-link" data-src="c8_ch2.html">Ch 2: Learn To Use MS Access 2016</a>
+                        <a class="chapter-link pending">Ch 3: Robotics</a>
+                        <a class="chapter-link pending">Ch 4: More On CSS</a>
+                        <a class="chapter-link pending">Ch 5: Lists And Tables In HTML</a>
+                        <a class="chapter-link pending">Ch 6: Cloud Based Computing</a>
+                    </div>
                 </div>
             </div>
-        </aside>
-
-        <!-- Fullscreen Notes Viewer -->
-        <main id="main-content">
-            <iframe id="notes-frame" src="c8_ch1.html" title="Notes Viewer"></iframe>
         </main>
+
+        <!-- Screen 2: Note Reader -->
+        <section id="reader-view" class="view-screen">
+            <iframe id="content-frame" title="Notes Reader"></iframe>
+        </section>
+
     </div>
 
     <script>
         // Accordion functionality
-        const accButtons = document.querySelectorAll('.acc-btn');
-        accButtons.forEach(btn => {
+        const accHeaders = document.querySelectorAll('.acc-header');
+        accHeaders.forEach(btn => {
             btn.addEventListener('click', function() {
-                this.classList.toggle('active');
-                const arrow = this.querySelector('.arrow');
-                const panel = this.nextElementSibling;
+                const isOpen = this.classList.contains('active');
                 
-                if (panel.style.maxHeight) {
-                    panel.style.maxHeight = null;
-                    if (arrow) arrow.textContent = '▶';
-                } else {
+                // Close all open panels
+                accHeaders.forEach(b => {
+                    b.classList.remove('active');
+                    b.querySelector('.arrow').textContent = '▶';
+                    b.nextElementSibling.style.maxHeight = null;
+                });
+
+                // If wasn't open, open it
+                if (!isOpen) {
+                    this.classList.add('active');
+                    this.querySelector('.arrow').textContent = '▼';
+                    const panel = this.nextElementSibling;
                     panel.style.maxHeight = panel.scrollHeight + "px";
-                    if (arrow) arrow.textContent = '▼';
                 }
             });
         });
 
-        // Drawer & Navigation controls
-        const sidebar = document.getElementById('sidebar');
-        const backdrop = document.getElementById('drawer-backdrop');
-        const menuBtn = document.getElementById('menu-btn');
-        const frame = document.getElementById('notes-frame');
-        const links = document.querySelectorAll('.chapter-link');
+        // Navigation between Menu and Reader View
+        const menuView = document.getElementById('menu-view');
+        const readerView = document.getElementById('reader-view');
+        const backBtn = document.getElementById('back-btn');
+        const headerTitle = document.getElementById('header-title');
+        const contentFrame = document.getElementById('content-frame');
+        const chapterLinks = document.querySelectorAll('.chapter-link');
 
-        function toggleDrawer() {
-            sidebar.classList.toggle('open');
-            backdrop.classList.toggle('active');
+        function openChapter(title, url) {
+            headerTitle.textContent = title;
+            backBtn.style.display = 'block';
+            contentFrame.src = url;
+            menuView.classList.remove('active');
+            readerView.classList.add('active');
+            window.history.pushState({ screen: 'reader' }, '');
         }
 
-        menuBtn.addEventListener('click', toggleDrawer);
-        backdrop.addEventListener('click', toggleDrawer);
+        function closeChapter() {
+            headerTitle.textContent = '📚 Computer with AI';
+            backBtn.style.display = 'none';
+            contentFrame.src = '';
+            readerView.classList.remove('active');
+            menuView.classList.add('active');
+        }
 
-        // Load selected chapter into iframe
-        links.forEach(link => {
+        chapterLinks.forEach(link => {
             link.addEventListener('click', function() {
                 if (this.classList.contains('pending')) return;
-
-                links.forEach(l => l.classList.remove('active-link'));
-                this.classList.add('active-link');
-
-                const target = this.getAttribute('data-src');
-                if (target) {
-                    frame.src = target;
-                }
-
-                // Close drawer on selection
-                if (window.innerWidth <= 768) {
-                    toggleDrawer();
-                }
+                const noteUrl = this.getAttribute('data-src');
+                const noteTitle = this.textContent;
+                openChapter(noteTitle, noteUrl);
             });
+        });
+
+        backBtn.addEventListener('click', () => {
+            window.history.back();
+        });
+
+        window.addEventListener('popstate', () => {
+            closeChapter();
         });
     </script>
 </body>
