@@ -72,30 +72,8 @@
     </div>
 
     <script>
-        // Accordion functionality
+    document.addEventListener('DOMContentLoaded', () => {
         const accHeaders = document.querySelectorAll('.acc-header');
-        accHeaders.forEach(btn => {
-            btn.addEventListener('click', function() {
-                const isOpen = this.classList.contains('active');
-                
-                // Close all open panels
-                accHeaders.forEach(b => {
-                    b.classList.remove('active');
-                    b.querySelector('.arrow').textContent = '▶';
-                    b.nextElementSibling.style.maxHeight = null;
-                });
-
-                // If wasn't open, open it
-                if (!isOpen) {
-                    this.classList.add('active');
-                    this.querySelector('.arrow').textContent = '▼';
-                    const panel = this.nextElementSibling;
-                    panel.style.maxHeight = panel.scrollHeight + "px";
-                }
-            });
-        });
-
-        // Navigation between Menu and Reader View
         const menuView = document.getElementById('menu-view');
         const readerView = document.getElementById('reader-view');
         const backBtn = document.getElementById('back-btn');
@@ -103,39 +81,74 @@
         const contentFrame = document.getElementById('content-frame');
         const chapterLinks = document.querySelectorAll('.chapter-link');
 
+        // Accordion Toggle
+        accHeaders.forEach(header => {
+            header.addEventListener('click', function(e) {
+                e.preventDefault();
+                const content = this.nextElementSibling;
+                const arrow = this.querySelector('.arrow');
+                const isOpen = content.style.display === 'block';
+
+                // Close all accordion panels
+                document.querySelectorAll('.acc-content').forEach(panel => {
+                    panel.style.display = 'none';
+                });
+                document.querySelectorAll('.acc-header').forEach(btn => {
+                    btn.classList.remove('active');
+                    const arr = btn.querySelector('.arrow');
+                    if (arr) arr.textContent = '▶';
+                });
+
+                // If clicked item was closed, open it
+                if (!isOpen) {
+                    this.classList.add('active');
+                    if (arrow) arrow.textContent = '▼';
+                    content.style.display = 'block';
+                }
+            });
+        });
+
+        // Open Note Reader
         function openChapter(title, url) {
             headerTitle.textContent = title;
-            backBtn.style.display = 'block';
+            backBtn.style.display = 'inline-block';
             contentFrame.src = url;
             menuView.classList.remove('active');
             readerView.classList.add('active');
             window.history.pushState({ screen: 'reader' }, '');
         }
 
+        // Close Note Reader
         function closeChapter() {
             headerTitle.textContent = '📚 Computer with AI';
             backBtn.style.display = 'none';
-            contentFrame.src = '';
+            contentFrame.src = 'about:blank';
             readerView.classList.remove('active');
             menuView.classList.add('active');
         }
 
+        // Handle Chapter Clicks
         chapterLinks.forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
                 if (this.classList.contains('pending')) return;
                 const noteUrl = this.getAttribute('data-src');
-                const noteTitle = this.textContent;
+                const noteTitle = this.textContent.trim();
                 openChapter(noteTitle, noteUrl);
             });
         });
 
-        backBtn.addEventListener('click', () => {
+        // Back Navigation Button
+        backBtn.addEventListener('click', (e) => {
+            e.preventDefault();
             window.history.back();
         });
 
+        // Hardware / Browser Back Navigation
         window.addEventListener('popstate', () => {
             closeChapter();
         });
-    </script>
+    });
+</script>
 </body>
 </html>
