@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 1: Number System – An Introduction</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header id="top">
+
+<h1>Topic-Wise Summary Notes</h1>
+
+<h3>Chapter 1: Number System – An Introduction</h3>
+
+</header>
+
+<div class="container">
+
+<!-- ACTION BUTTONS -->
+<div class="action-bar">
+    <button onclick="downloadAsText()" class="action-btn text-btn">📄 Save as Plain Text (.txt)</button>
+    <button onclick="exportToWord()" class="action-btn doc-btn">📝 Export to MS Word (.doc)</button>
+</div>
+
+<div class="toc">
+
+<h2>📚 Table of Contents</h2>
+
+<ul>
+
+<li><a href="#intro">1. Introduction to Number Systems</a></li>
+
+<li><a href="#decimal">2. Decimal Number System</a></li>
+
+<li><a href="#binary">3. Binary Number System & 4-Bit Codes</a></li>
+
+<li><a href="#conversions">4. Number System Conversions</a></li>
+
+<li><a href="#arithmetic">5. Computer Arithmetic</a></li>
+
+<li><a href="#history">6. Historical Facts ("Do You Know")</a></li>
+
+<li><a href="#summary-table">7. Quick Comparison & Reference Summary</a></li>
+
+</ul>
+
+</div>
+
+<!-- 1. INTRODUCTION TO NUMBER SYSTEMS -->
+
+<section id="intro">
+
+<h2>1. Introduction to Number Systems</h2>
+
+<p>
+A <strong>number system</strong> is a set of values used to represent different quantities.
+</p>
+
+<h3>Usage in Daily Life & Computers</h3>
+
+<ul>
+
+<li><strong>Daily Life:</strong> We use the decimal number system, which has a base of 10 as it uses 10 digits (0 to 9).</li>
+
+<li><strong>Digital Representation:</strong> Digital computers represent all kinds of data and information (such as text, numbers, graphics, and videos) in binary numbers.</li>
+
+<li><strong>Binary Base:</strong> The binary number system has a base of 2 because computers use only 2 digits: 0 and 1.</li>
+
+<li><strong>Other Systems:</strong> Other common number systems used in computing include octal (base 8) and hexadecimal (base 16).</li>
+
+<li><strong>Interchangeability:</strong> Values from one number system can be systematically converted into another.</li>
+
+</ul>
+
+<a href="#top" class="back">⬆ Back to Top</a>
+
+</section>
+
+<!-- 2. DECIMAL NUMBER SYSTEM -->
+
+<section id="decimal">
+
+<h2>2. Decimal Number System</h2>
+
+<p>
+The decimal number system is the most common system in daily life, widely used for standard counting (such as counting students in a classroom).
+</p>
+
+<h3>Key Features</h3>
+
+<ul>
+
+<li><strong>Digits Used:</strong> Contains 10 digits, from <code>0</code> through <code>9</code>.</li>
+
+<li><strong>Base Value:</strong> Base 10.</li>
+
+<li><strong>Higher Value Representation:</strong> Any quantity greater than 9 is represented by a combination of two or more digits (e.g., adding 8 and 5 results in 13, which combines the digits 1 and 3).</li>
+
+</ul>
+
+<a href="#top" class="back">⬆ Back to Top</a>
+
+</section>
+
+<!-- 3. BINARY NUMBER SYSTEM -->
+
+<section id="binary">
+
+<h2>3. Binary Number System</h2>
+
+<p>
+The word <em>binary</em> means "composed of two." It forms the core foundation of digital electronics and computing.
+</p>
+
+<h3>Key Fundamentals</h3>
+
+<ul>
+
+<li><strong>Digits & Base:</strong> Uses only two digits: <code>0</code> (OFF) and <code>1</code> (ON). Its base is 2.</li>
+
+<li><strong>The Bit:</strong> A single digit in the binary system is termed a <strong>bit</strong> (short for <em>binary digit</em>).</li>
+
+</ul>
+
+<h3>4-Bit Representation of Decimal Digits (0 to 9)</h3>
+
+<table>
+
+<tr>
+
+<th>Decimal Digit</th>
+
+<th>4-Bit Binary Code</th>
+
+<th>Decimal Digit</th>
+
+<th>4-Bit Binary Code</th>
+
+</tr>
+
+<tr>
+
+<td>0</td>
+
+<td><code>0000</code></td>
+
+<td>5</td>
+
+<td><code>0101</code></td>
+
+</tr>
+
+<tr>
+
+<td>1</td>
+
+<td><code>0001</code></td>
+
+<td>6</td>
+
+<td><code>0110</code></td>
+
+</tr>
+
+<tr>
+
+<td>2</td>
+
+<td><code>0010</code></td>
+
+<td>7</td>
+
+<td><code>0111</code></td>
+
+</tr>
+
+<tr>
+
+<td>3</td>
+
+<td><code>0011</code></td>
+
+<td>8</td>
+
+<td><code>1000</code></td>
+
+</tr>
+
+<tr>
+
+<td>4</td>
+
+<td><code>0100</code></td>
+
+<td>9</td>
+
+<td><code>1001</code></td>
+
+</tr>
+
+</table>
+
+<a href="#top" class="back">⬆ Back to Top</a>
+
+</section>
+
+<!-- 4. NUMBER SYSTEM CONVERSIONS -->
+
+<section id="conversions">
+
+<h2>4. Number System Conversions</h2>
+
+<h3>A. Binary to Decimal Conversion</h3>
+
+<p>
+Binary numbers use positional weights based on powers of 2. Multiply each binary digit by its corresponding positional weight (2<sup>position</sup>) and calculate the sum.
+</p>
+
+<ul>
+
+<li><strong>Integer positions (left of point):</strong> 0, 1, 2, 3, 4, ...</li>
+
+<li><strong>Fractional positions (right of point):</strong> -1, -2, -3, ...</li>
+
+</ul>
+
+<div class="example-box">
+
+<strong>Example: Convert (10101.011)<sub>2</sub> to Decimal</strong><br><br>
+
+<strong>Integer Part (10101):</strong><br>
+1 × 2<sup>4</sup> = 16<br>
+0 × 2<sup>3</sup> = 0<br>
+1 × 2<sup>2</sup> = 4<br>
+0 × 2<sup>1</sup> = 0<br>
+1 × 2<sup>0</sup> = 1<br>
+Sum = 16 + 0 + 4 + 0 + 1 = <strong>21</strong><br><br>
+
+<strong>Fractional Part (.011):</strong><br>
+0 × 2<sup>-1</sup> = 0.000<br>
+1 × 2<sup>-2</sup> = 0.250<br>
+1 × 2<sup>-3</sup> = 0.125<br>
+Sum = 0.000 + 0.250 + 0.125 = <strong>0.375</strong><br><br>
+
+<strong>Result:</strong> (10101.011)<sub>2</sub> = <strong>(21.375)<sub>10</sub></strong>
+
+</div>
+
+<h3>B. Decimal to Binary Conversion</h3>
+
+<ol>
+
+<li>Continuously divide the decimal integer by 2.</li>
+
+<li>Record the remainder (0 or 1) after each step on the right side.</li>
+
+<li>Read the recorded remainders from <strong>bottom to top</strong>.</li>
+
+</ol>
+
+<div class="example-box">
+
+<strong>Example 1: Convert (7)<sub>10</sub> to Binary</strong><br>
+7 ÷ 2 = 3 (Remainder: 1)<br>
+3 ÷ 2 = 1 (Remainder: 1)<br>
+1 ÷ 2 = 0 (Remainder: 1)<br>
+Result (bottom to top): <strong>(111)<sub>2</sub></strong> or <strong>(0111)<sub>2</sub></strong><br><br>
+
+<strong>Example 2: Convert (16)<sub>10</sub> to Binary</strong><br>
+16 ÷ 2 = 8 (Remainder: 0)<br>
+8 ÷ 2 = 4 (Remainder: 0)<br>
+4 ÷ 2 = 2 (Remainder: 0)<br>
+2 ÷ 2 = 1 (Remainder: 0)<br>
+1 ÷ 2 = 0 (Remainder: 1)<br>
+Result (bottom to top): <strong>(10000)<sub>2</sub></strong>
+
+</div>
+
+<h3>C. Octal to Decimal Conversion</h3>
+
+<p>
+The Octal system uses 8 digits (<code>0 to 7</code>) with a base of 8. To convert to decimal, multiply each digit by 8 raised to the power of its position index and sum them up.
+</p>
+
+<div class="example-box">
+
+<strong>Example: Convert (2416)<sub>8</sub> to Decimal</strong><br>
+6 × 8<sup>0</sup> = 6 × 1 = 6<br>
+1 × 8<sup>1</sup> = 1 × 8 = 8<br>
+4 × 8<sup>2</sup> = 4 × 64 = 256<br>
+2 × 8<sup>3</sup> = 2 × 512 = 1024<br><br>
+Sum = 1024 + 256 + 8 + 6 = <strong>1294</strong><br>
+<strong>Result:</strong> (2416)<sub>8</sub> = <strong>(1294)<sub>10</sub></strong>
+
+</div>
+
+<h3>D. Hexadecimal to Decimal Conversion</h3>
+
+<p>
+The Hexadecimal system uses 16 digits: <code>0 to 9</code> and letters <code>A</code> through <code>F</code> (Base 16).
+</p>
+
+<ul>
+
+<li>A = 10, B = 11, C = 12, D = 13, E = 14, F = 15</li>
+
+</ul>
+
+<div class="example-box">
+
+<strong>Example: Convert (3B)<sub>16</sub> to Decimal</strong><br>
+B × 16<sup>0</sup> = 11 × 1 = 11<br>
+3 × 16<sup>1</sup> = 3 × 16 = 48<br><br>
+Sum = 48 + 11 = <strong>59</strong><br>
+<strong>Result:</strong> (3B)<sub>16</sub> = <strong>(59)<sub>10</sub></strong>
+
+</div>
+
+<a href="#top" class="back">⬆ Back to Top</a>
+
+</section>
+
+<!-- 5. COMPUTER ARITHMETIC -->
+
+<section id="arithmetic">
+
+<h2>5. Computer Arithmetic</h2>
+
+<h3>A. Binary Addition</h3>
+
+<table>
+
+<tr>
+
+<th>Operation</th>
+
+<th>Result</th>
+
+<th>Carry Over</th>
+
+</tr>
+
+<tr>
+
+<td>0 + 0</td>
+
+<td>0</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>0 + 1</td>
+
+<td>1</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>1 + 0</td>
+
+<td>1</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>1 + 1</td>
+
+<td>0</td>
+
+<td>1 (to next higher bit)</td>
+
+</tr>
+
+</table>
+
+<div class="example-box">
+
+<strong>Example: Add 101 + 101</strong><br>
+&nbsp;&nbsp;1 1 &nbsp; (Carry)<br>
+&nbsp;&nbsp;1 0 1<br>
++ 1 0 1<br>
+-------<br>
+<strong>1 0 1 0</strong>
+
+</div>
+
+<h3>B. Binary Subtraction</h3>
+
+<table>
+
+<tr>
+
+<th>Operation</th>
+
+<th>Result</th>
+
+<th>Borrow</th>
+
+</tr>
+
+<tr>
+
+<td>0 − 0</td>
+
+<td>0</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>0 − 1</td>
+
+<td>1</td>
+
+<td>1 (borrow from adjacent left bit)</td>
+
+</tr>
+
+<tr>
+
+<td>1 − 0</td>
+
+<td>1</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>1 − 1</td>
+
+<td>0</td>
+
+<td>0</td>
+
+</tr>
+
+</table>
+
+<div class="example-box">
+
+<strong>Example: Subtract 11 from 101</strong><br>
+&nbsp;&nbsp;1 0 1<br>
+- &nbsp; 1 1<br>
+-------<br>
+<strong>0 1 0</strong>
+
+</div>
+
+<h3>C. Binary Multiplication</h3>
+
+<table>
+
+<tr>
+
+<th>Operation</th>
+
+<th>Result</th>
+
+</tr>
+
+<tr>
+
+<td>0 × 0</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>0 × 1</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>1 × 0</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>1 × 1</td>
+
+<td>1</td>
+
+</tr>
+
+</table>
+
+<div class="example-box">
+
+<strong>Example: Multiply 1001 by 11</strong><br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 0 0 1<br>
+&nbsp;&nbsp;× &nbsp;&nbsp;&nbsp; 1 1<br>
+----------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 0 0 1<br>
++ 1 0 0 1 0<br>
+----------<br>
+<strong>1 1 0 1 1</strong>
+
+</div>
+
+<h3>D. Binary Division</h3>
+
+<p>
+Follows the same long-division principles as the decimal division method.
+</p>
+
+<div class="example-box">
+
+<strong>Example: Divide 1101 by 10</strong><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;110 &nbsp; (Quotient)<br>
+10 ) 1101<br>
+&nbsp;&nbsp;&nbsp;&nbsp; 10<br>
+&nbsp;&nbsp;&nbsp;&nbsp; --<br>
+&nbsp;&nbsp;&nbsp;&nbsp; 010<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;10<br>
+&nbsp;&nbsp;&nbsp;&nbsp; --<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;01 &nbsp; (Remainder)<br><br>
+<strong>Quotient:</strong> 110<br>
+<strong>Remainder:</strong> 1 (or 001)
+
+</div>
+
+<a href="#top" class="back">⬆ Back to Top</a>
+
+</section>
+
+<!-- 6. HISTORICAL FACTS -->
+
+<section id="history">
+
+<h2>6. Historical Facts ("Do You Know")</h2>
+
+<ul>
+
+<li><strong>Number System Origin:</strong> India invented the number system.</li>
+
+<li><strong>Invention of Zero:</strong> The mathematical concept and symbol for Zero was invented by the Indian mathematician and astronomer <strong>Aryabhatta</strong>.</li>
+
+<li><strong>Place Value System:</strong> Both the decimal system and the place value positional system were developed in ancient India.</li>
+
+</ul>
+
+<a href="#top" class="back">⬆ Back to Top</a>
+
+</section>
+
+<!-- 7. QUICK COMPARISON & REFERENCE SUMMARY -->
+
+<section id="summary-table">
+
+<h2>7. Quick Comparison & Reference Summary</h2>
+
+<table>
+
+<tr>
+
+<th>Number System</th>
+
+<th>Base (Radix)</th>
+
+<th>Digits / Symbols Used</th>
+
+<th>Primary Application</th>
+
+</tr>
+
+<tr>
+
+<td><strong>Binary</strong></td>
+
+<td>Base 2</td>
+
+<td>0, 1</td>
+
+<td>Internal computer operations, logic gates</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Octal</strong></td>
+
+<td>Base 8</td>
+
+<td>0, 1, 2, 3, 4, 5, 6, 7</td>
+
+<td>Shorthand representation of binary bytes</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Decimal</strong></td>
+
+<td>Base 10</td>
+
+<td>0, 1, 2, 3, 4, 5, 6, 7, 8, 9</td>
+
+<td>Human counting & daily arithmetic</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Hexadecimal</strong></td>
+
+<td>Base 16</td>
+
+<td>0–9, A–F (A=10 to F=15)</td>
+
+<td>Memory addressing, color codes (HTML/CSS)</td>
+
+</tr>
+
+</table>
+
+<div class="note">
+
+<strong>Key Rule Summary:</strong><br>
+Decimal to Any Base → Successive division by target base and collect remainders bottom-to-top.<br>
+Any Base to Decimal → Positional multiplication using powers of the base (Base<sup>position</sup>).<br>
+Bit → Single Binary Digit (0 or 1).
+
+</div>
+
+<a href="#top" class="back">⬆ Back to Top</a>
+
+</section>
+
+</div>
+
+<footer>
+
+Chapter 1: Number System – An Introduction Summary Notes
+
+</footer>
+
+<script src="exporter.js"></script>
+
+</body>
+</html>

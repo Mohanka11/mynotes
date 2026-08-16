@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Working with MS Excel 2016 - Basics & Core Concepts</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header id="top">
+
+<h1>Topic-Wise Summary Notes</h1>
+
+<h3>Working with MS Excel 2016 – Basics & Core Operations</h3>
+
+</header>
+
+<div class="container">
+
+<div class="toc">
+
+<h2>📚 Table of Contents</h2>
+
+<ul>
+
+<li><a href="#selection">1. Selecting and Deselecting Cells or Ranges</a></li>
+
+<li><a href="#data-entry">2. Entering Numbers as Text, Dates, and Times</a></li>
+
+<li><a href="#cell-ops">3. Basic Operations on Cells, Rows, and Columns</a></li>
+
+<li><a href="#formatting">4. Formatting Numbers and Borders</a></li>
+
+<li><a href="#autofill">5. Auto Fill Feature</a></li>
+
+<li><a href="#flashfill">6. Flash Fill Feature</a></li>
+
+<li><a href="#shortcuts-summary">7. Keyboard Shortcuts & Quick Summary</a></li>
+
+</ul>
+
+</div>
+
+<!-- SELECTING AND DESELECTING CELLS OR RANGES -->
+
+<section id="selection">
+
+<h2>1. Selecting and Deselecting Cells or Ranges</h2>
+
+<p>
+
+Navigating and selecting cell ranges accurately is essential for editing, formatting, and applying formulas efficiently in Microsoft Excel.
+
+</p>
+
+<h3>Selection Techniques</h3>
+
+<ul>
+
+<li><strong>Keyboard Selection:</strong> Press <code>Shift + Arrow keys</code> to expand the selection to adjacent cells.</li>
+
+<li><strong>Entire Row or Column:</strong> Click the column heading to select a full column, or click the row heading to select a full row.</li>
+
+<li><strong>Entire Worksheet:</strong> Click the cross-section box between the row and column headers, or press <code>Ctrl + A</code>.</li>
+
+<li><strong>Extend Selection Mode (Large Ranges):</strong> Click the starting cell, press <code>F8</code> to enable Extend Selection mode (indicated on the Status bar), click the ending cell, and press <code>F8</code> again to turn it off.</li>
+
+<li><strong>Non-Adjacent Ranges:</strong> Select the first range, hold down the <code>Ctrl</code> key, and select additional ranges.</li>
+
+</ul>
+
+<h3>Selection Shortcuts</h3>
+
+<table>
+
+<tr>
+
+<th>Shortcut Key</th>
+
+<th>Action / Result</th>
+
+</tr>
+
+<tr>
+
+<td><code>Shift + Spacebar</code></td>
+
+<td>Selects the active row.</td>
+
+</tr>
+
+<tr>
+
+<td><code>Ctrl + Spacebar</code></td>
+
+<td>Selects the active column.</td>
+
+</tr>
+
+<tr>
+
+<td><code>Ctrl + A</code></td>
+
+<td>Selects the entire worksheet.</td>
+
+</tr>
+
+</table>
+
+<div class="note">
+
+<strong>Tip:</strong> Hold down the <code>Ctrl</code> key when you need to select multiple separate cells or blocks of data across the worksheet.
+
+</div>
+
+<a href="#top" class="back">⬆ Back to Top</a>
+
+</section>
+
+<!-- ENTERING NUMBERS AS TEXT, DATES, AND TIMES -->
+
+<section id="data-entry">
+
+<h2>2. Entering Numbers as Text, Dates, and Times</h2>
+
+<p>
+
+Understanding how Excel interprets numbers, text, dates, and times prevents data formatting errors and unexpected loss of information.
+
+</p>
+
+<h3>Numbers as Text</h3>
+
+<p>
+
+Standard numbers automatically align to the right side of a cell. To preserve leading zeros (e.g., telephone codes or ID numbers like <code>07286</code>), type an apostrophe (<code>'</code>) before the number (e.g., <code>'07286</code>). This converts the entry to text and aligns it to the left.
+
+</p>
+
+<h3>Steps to Format Numbers, Dates, and Times</h3>
+
+<ol>
+
+<li>Select the target cells.</li>
+
+<li>Go to the <strong>Home</strong> tab → click the <strong>Format</strong> command (in the Cells group) → select <strong>Format Cells</strong> (or right-click and choose <em>Format Cells</em>).</li>
+
+<li>Under the <strong>Number</strong> tab, pick a category (e.g., <strong>Number</strong>, <strong>Date</strong>, or <strong>Time</strong>).</li>
+
+<li>Select the desired display format from the list.</li>
+
+<li>Click <strong>OK</strong>.</li>
+
+</ol>
+
+<div class="note">
+
+An apostrophe (<code>'</code>) tells Excel to treat numeric entries strictly as text, making sure leading zeros are not automatically deleted.
+
+</div>
+
+<a href="#top" class="back">⬆ Back to Top</a>
+
+</section>
+
+<!-- BASIC OPERATIONS ON CELLS, ROWS, AND COLUMNS -->
+
+<section id="cell-ops">
+
+<h2>3. Basic Operations on Cells, Rows, and Columns</h2>
+
+<p>
+
+Excel provides straightforward tools to edit, move, insert, and delete structural elements without losing data integrity.
+
+</p>
+
+<h3>Editing, Copying, and Moving</h3>
+
+<ul>
+
+<li><strong>Editing:</strong> Modify cell contents directly by double-clicking the cell or over-writing existing data.</li>
+
+<li><strong>Copying Cell Contents:</strong> Select cell → <strong>Home</strong> tab → <strong>Copy</strong> (or press <code>Ctrl + C</code>) → choose target cell → <strong>Paste</strong> (or press <code>Ctrl + V</code>).</li>
+
+<li><strong>Moving Cell Contents:</strong> Select cell → <strong>Home</strong> tab → <strong>Cut</strong> (or press <code>Ctrl + X</code>) → choose target cell → <strong>Paste</strong> (or press <code>Ctrl + V</code>).</li>
+
+</ul>
+
+<h3>Inserting and Deleting Cells, Rows, and Columns</h3>
+
+<table>
+
+<tr>
+
+<th>Operation</th>
+
+<th>Navigation Path</th>
+
+<th>Options / Action</th>
+
+</tr>
+
+<tr>
+
+<td><strong>Insert Cells</strong></td>
+
+<td>Home tab → Insert drop-down → Insert Cells</td>
+
+<td>Select <em>Shift cells right</em> or <em>Shift cells down</em> → click <strong>OK</strong>.</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Delete Cells</strong></td>
+
+<td>Home tab → Delete drop-down → Delete Cells</td>
+
+<td>Select the shift direction → click <strong>OK</strong>.</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Insert Rows/Columns</strong></td>
+
+<td>Home tab → Insert drop-down</td>
+
+<td>Select <em>Insert Sheet Rows</em> or <em>Insert Sheet Columns</em>.</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Delete Rows/Columns</strong></td>
+
+<td>Home tab → Delete drop-down</td>
+
+<td>Select <em>Delete Sheet Rows</em> or <em>Delete Sheet Columns</em>.</td>
+
+</tr>
+
+</table>
+
+<a href="#top" class="back">⬆ Back to Top</a>
+
+</section>
+
+<!-- FORMATTING NUMBERS AND BORDERS -->
+
+<section id="formatting">
+
+<h2>4. Formatting Numbers and Borders</h2>
+
+<p>
+
+Formatting improves visual layout, making data easier to review and present in clean table structures.
+
+</p>
+
+<h3>Quick Formatting Controls</h3>
+
+<ul>
+
+<li><strong>Number Group:</strong> Use the quick controls in the <strong>Number</strong> group under the <strong>Home</strong> tab to apply currency symbols, percentages, decimals, and comma styles quickly.</li>
+
+<li><strong>Applying Borders:</strong> 
+  <ol>
+
+  <li>Select the target cells.</li>
+
+  <li>Click the <strong>Borders</strong> drop-down menu on the <strong>Home</strong> tab (Font group).</li>
+
+  <li>Select the desired border style (e.g., <strong>All Borders</strong>, <strong>Outside Borders</strong>, or <strong>Thick Box Border</strong>).</li>
+
+  </ol>
+
+</li>
+
+</ul>
+
+<div class="note">
+
+Applying grid borders manually ensures that table lines remain bold and clearly defined when printing or exporting worksheets.
+
+</div>
+
+<a href="#top" class="back">⬆ Back to Top</a>
+
+</section>
+
+<!-- AUTO FILL FEATURE -->
+
+<section id="autofill">
+
+<h2>5. Auto Fill Feature</h2>
+
+<p>
+
+The Auto Fill feature automatically generates a predefined sequence of data (such as numbers, dates, weekdays, or months) to save manual typing effort.
+
+</p>
+
+<h3>Types of Sequences</h3>
+
+<ul>
+
+<li><strong>Numeric Series:</strong> Type the first two values to establish the increment pattern, select both cells, and drag the <strong>Fill handle</strong> (the small square at the bottom-right corner) over the target range.</li>
+
+<li><strong>Predefined Lists:</strong> Type the initial entry (e.g., <em>Sunday</em> or <em>January</em>) and drag the <strong>Fill handle</strong> across adjacent cells.</li>
+
+</ul>
+
+<div class="note">
+
+<strong>Remember:</strong> For a custom numeric series (e.g., 2, 4, 6, 8...), you must type at least two numbers so Excel can detect the step interval.
+
+</div>
+
+<a href="#top" class="back">⬆ Back to Top</a>
+
+</section>
+
+<!-- FLASH FILL FEATURE -->
+
+<section id="flashfill">
+
+<h2>6. Flash Fill Feature</h2>
+
+<p>
+
+Flash Fill automatically recognizes patterns in adjacent data columns and instantly completes remaining entries without requiring complex formulas.
+
+</p>
+
+<h3>Steps to Use Flash Fill</h3>
+
+<ol>
+
+<li>Enter a sample pattern manually in a column next to your data.</li>
+
+<li>Press <strong>Enter</strong> to move to the next row.</li>
+
+<li>Navigate to the <strong>Home</strong> tab → <strong>Editing</strong> group → <strong>Fill</strong> drop-down menu.</li>
+
+<li>Click <strong>Flash Fill</strong> (or press shortcut <code>Ctrl + E</code>).</li>
+
+</ol>
+
+<div class="note">
+
+Flash Fill is ideal for combining names (First + Last), extracting domain names from email addresses, or reformatting phone numbers without using string formulas.
+
+</div>
+
+<a href="#top" class="back">⬆ Back to Top</a>
+
+</section>
+
+<!-- KEYBOARD SHORTCUTS & SUMMARY -->
+
+<section id="shortcuts-summary">
+
+<h2>7. Keyboard Shortcuts & Quick Summary</h2>
+
+<table>
+
+<tr>
+
+<th>Feature / Task</th>
+
+<th>Key Action / Command</th>
+
+</tr>
+
+<tr>
+
+<td>Select Row</td>
+
+<td><code>Shift + Spacebar</code></td>
+
+</tr>
+
+<tr>
+
+<td>Select Column</td>
+
+<td><code>Ctrl + Spacebar</code></td>
+
+</tr>
+
+<tr>
+
+<td>Select Entire Sheet</td>
+
+<td><code>Ctrl + A</code></td>
+
+</tr>
+
+<tr>
+
+<td>Extend Selection Mode</td>
+
+<td><code>F8</code> (Start) → Select Cell → <code>F8</code> (Stop)</td>
+
+</tr>
+
+<tr>
+
+<td>Text Number Entry</td>
+
+<td>Type single quote (<code>'</code>) before numbers</td>
+
+</tr>
+
+<tr>
+
+<td>Flash Fill Shortcut</td>
+
+<td><code>Ctrl + E</code></td>
+
+</tr>
+
+</table>
+
+<div class="note">
+
+<strong>Quick Reference:</strong><br>
+
+Apostrophe (<code>'</code>) → Preserve leading zeros<br>
+Extend Mode (<code>F8</code>) → Select large ranges easily<br>
+Auto Fill → Drag Fill Handle for sequential patterns<br>
+Flash Fill → Auto-detect and separate/combine pattern text
+
+</div>
+
+<a href="#top" class="back">⬆ Back to Top</a>
+
+</section>
+
+</div>
+
+<footer>
+
+Working with MS Excel 2016 – Basics & Core Operations Summary Notes
+
+</footer>
+<script src="exporter.js"></script>
+</body>
+</html>
