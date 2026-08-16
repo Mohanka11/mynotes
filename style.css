@@ -1,18 +1,126 @@
+/* ==========================================================================
+   GLOBAL RESET & NOTE PAGE FORMATTING
+   ========================================================================== */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
-html, body {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background: #f4f6f9;
+/* Base style for chapter note pages */
+body {
+    background-color: #f8fafc;
+    color: #1e293b;
+    padding: 14px;
+    font-size: 14px;
+    line-height: 1.6;
+    word-break: break-word;
 }
 
-/* Top App Bar */
+/* Headings */
+h1 {
+    font-size: 1.25rem !important;
+    line-height: 1.35;
+    margin: 6px 0 14px 0;
+    color: #0f172a;
+}
+
+h2 {
+    font-size: 1.05rem !important;
+    margin: 18px 0 8px 0;
+    color: #1e40af;
+}
+
+h3 {
+    font-size: 0.95rem !important;
+    margin: 14px 0 6px 0;
+    color: #334155;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/* Table of Contents Box */
+.toc, #toc, nav {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.toc h2, #toc h2, nav h2 {
+    margin-top: 0;
+}
+
+ul, ol {
+    padding-left: 20px;
+    margin-bottom: 12px;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Section Cards / Containers */
+section, .section-card, .container {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin: 12px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* Tables (Horizontal scroll support on small screens) */
+table {
+    display: block;
+    width: 100% !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 0.85rem;
+    background: #ffffff;
+}
+
+table th, table td {
+    padding: 8px 10px;
+    border: 1px solid #cbd5e1;
+    min-width: 110px;
+    text-align: left;
+}
+
+table th {
+    background: #e2e8f0;
+    color: #0f172a;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   PORTAL SHELL & APP FRAMEWORK (Overrides body defaults for index.html only)
+   ========================================================================== */
+body.portal-layout {
+    padding: 0 !important;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
 .top-nav {
     display: none;
     height: 52px;
@@ -42,14 +150,14 @@ html, body {
     white-space: nowrap;
 }
 
-/* Main Layout Structure */
 .portal-wrapper {
     display: flex;
+    flex: 1;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 52px);
+    overflow: hidden;
 }
 
-/* Sidebar Drawer */
 #sidebar {
     width: 320px;
     min-width: 320px;
@@ -70,13 +178,15 @@ html, body {
 }
 
 .sidebar-header h2 {
-    font-size: 17px;
-    margin-bottom: 2px;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    margin: 0 0 2px 0 !important;
 }
 
 .sidebar-header p {
     font-size: 12px;
     opacity: 0.85;
+    margin: 0;
 }
 
 .accordion-container {
@@ -85,7 +195,6 @@ html, body {
     padding: 10px;
 }
 
-/* Accordion Buttons & Panels */
 .acc-btn {
     width: 100%;
     background: #f1f5f9;
@@ -120,6 +229,7 @@ html, body {
 .chapter-list {
     list-style: none;
     padding: 4px 0;
+    margin-bottom: 0;
 }
 
 .chapter-link {
@@ -147,11 +257,10 @@ html, body {
     cursor: not-allowed;
 }
 
-/* Main Content Area */
 #main-content {
     flex: 1;
     height: 100%;
-    background: #ffffff;
+    background: #f8fafc;
 }
 
 #notes-frame {
@@ -161,7 +270,6 @@ html, body {
     display: block;
 }
 
-/* Backdrop */
 #drawer-backdrop {
     display: none;
     position: fixed;
@@ -177,14 +285,9 @@ html, body {
     display: block;
 }
 
-/* Mobile Rules (Screens under 768px) */
 @media (max-width: 768px) {
     .top-nav {
         display: flex;
-    }
-
-    .portal-wrapper {
-        height: calc(100vh - 52px);
     }
 
     #sidebar {
@@ -204,99 +307,4 @@ html, body {
     #main-content {
         width: 100vw;
     }
-}
-/* ==========================================================================
-   CHAPTER NOTES MOBILE OPTIMIZATION (Applies to all note pages)
-   ========================================================================== */
-
-/* Fix viewport overflow & base spacing */
-body {
-    padding: 12px;
-    font-size: 14px;
-    line-height: 1.6;
-    background-color: #f8fafc;
-    color: #1e293b;
-    word-wrap: break-word;
-    overflow-x: hidden;
-}
-
-/* Headings scale down cleanly on small screens */
-h1 {
-    font-size: 1.25rem !important;
-    line-height: 1.35;
-    margin-bottom: 12px;
-    color: #0f172a;
-}
-
-h2 {
-    font-size: 1.05rem !important;
-    margin-top: 18px;
-    margin-bottom: 8px;
-    color: #1e40af;
-}
-
-h3 {
-    font-size: 0.95rem !important;
-    margin-top: 14px;
-    margin-bottom: 6px;
-}
-
-/* Table of Contents card styling */
-.toc, nav, #toc {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 12px 14px;
-    margin-bottom: 16px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-.toc ul, nav ul {
-    padding-left: 20px;
-    margin-bottom: 0;
-}
-
-.toc li, nav li {
-    margin-bottom: 6px;
-    font-size: 0.85rem;
-}
-
-.toc a, nav a {
-    color: #2563eb;
-    text-decoration: none;
-}
-
-/* Section Cards */
-section, .section-card, .container {
-    width: 100% !important;
-    max-width: 100% !important;
-    background: #ffffff;
-    border-radius: 8px;
-    padding: 12px;
-    margin: 10px 0;
-    box-sizing: border-box;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-}
-
-/* Make wide tables horizontally scrollable without breaking the layout */
-table {
-    display: block;
-    width: 100% !important;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    border-collapse: collapse;
-    margin: 12px 0;
-    font-size: 0.82rem;
-}
-
-table th, table td {
-    padding: 8px 10px;
-    border: 1px solid #cbd5e1;
-    min-width: 100px;
-}
-
-table th {
-    background: #f1f5f9;
-    color: #0f172a;
-    font-weight: 600;
 }
