@@ -1,244 +1,140 @@
-/* ==========================================================================
-   GLOBAL RESET & NOTE PAGE FORMATTING
-   ========================================================================== */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
-/* Base style for chapter note pages */
-body {
-    background-color: #f8fafc;
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #f1f5f9;
     color: #1e293b;
-    padding: 14px;
-    font-size: 14px;
-    line-height: 1.6;
-    word-break: break-word;
-}
-
-/* Headings */
-h1 {
-    font-size: 1.25rem !important;
-    line-height: 1.35;
-    margin: 6px 0 14px 0;
-    color: #0f172a;
-}
-
-h2 {
-    font-size: 1.05rem !important;
-    margin: 18px 0 8px 0;
-    color: #1e40af;
-}
-
-h3 {
-    font-size: 0.95rem !important;
-    margin: 14px 0 6px 0;
-    color: #334155;
-}
-
-p {
-    margin-bottom: 10px;
-}
-
-/* Table of Contents Box */
-.toc, #toc, nav {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 12px 14px;
-    margin-bottom: 16px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-.toc h2, #toc h2, nav h2 {
-    margin-top: 0;
-}
-
-ul, ol {
-    padding-left: 20px;
-    margin-bottom: 12px;
-}
-
-li {
-    margin-bottom: 6px;
-}
-
-a {
-    color: #2563eb;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Section Cards / Containers */
-section, .section-card, .container {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 12px 14px;
-    margin: 12px 0;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-}
-
-/* Tables (Horizontal scroll support on small screens) */
-table {
-    display: block;
-    width: 100% !important;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    border-collapse: collapse;
-    margin: 12px 0;
-    font-size: 0.85rem;
-    background: #ffffff;
-}
-
-table th, table td {
-    padding: 8px 10px;
-    border: 1px solid #cbd5e1;
-    min-width: 110px;
-    text-align: left;
-}
-
-table th {
-    background: #e2e8f0;
-    color: #0f172a;
-    font-weight: 600;
-}
-
-/* ==========================================================================
-   PORTAL SHELL & APP FRAMEWORK (Overrides body defaults for index.html only)
-   ========================================================================== */
-body.portal-layout {
-    padding: 0 !important;
-    height: 100vh;
-    width: 100vw;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
 }
 
-.top-nav {
-    display: none;
-    height: 52px;
+/* App Header Bar */
+.app-header {
+    height: 54px;
     background: #0056b3;
     color: #ffffff;
+    display: flex;
     align-items: center;
     padding: 0 14px;
     gap: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     z-index: 100;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
-#menu-btn {
-    background: #ffffff;
-    color: #0056b3;
-    border: none;
+.app-header h1 {
+    font-size: 16px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.nav-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 6px;
     padding: 6px 12px;
     font-size: 13px;
-    font-weight: bold;
+    font-weight: 600;
     cursor: pointer;
 }
 
-.portal-title {
-    font-size: 15px;
-    font-weight: 600;
-    white-space: nowrap;
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
 }
 
-.portal-wrapper {
-    display: flex;
-    flex: 1;
+/* Screen Containers */
+.app-body {
     width: 100vw;
-    height: calc(100vh - 52px);
-    overflow: hidden;
+    height: calc(100vh - 54px);
+    position: relative;
 }
 
-#sidebar {
-    width: 320px;
-    min-width: 320px;
+.view-screen {
+    display: none;
+    width: 100%;
     height: 100%;
-    background: #ffffff;
-    border-right: 1px solid #e2e8f0;
-    display: flex;
-    flex-direction: column;
-    z-index: 1500;
-    transition: transform 0.28s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-.sidebar-header {
-    background: #0056b3;
-    color: #ffffff;
-    padding: 16px;
+.view-screen.active {
+    display: block;
+}
+
+/* Menu View */
+#menu-view {
+    overflow-y: auto;
+    padding: 16px 12px;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 14px;
     text-align: center;
 }
 
-.sidebar-header h2 {
-    color: #ffffff !important;
-    font-size: 16px !important;
-    margin: 0 0 2px 0 !important;
+.accordion-list {
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.sidebar-header p {
-    font-size: 12px;
-    opacity: 0.85;
-    margin: 0;
+.acc-item {
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    margin-bottom: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
-.accordion-container {
-    flex: 1;
-    overflow-y: auto;
-    padding: 10px;
-}
-
-.acc-btn {
+.acc-header {
     width: 100%;
-    background: #f1f5f9;
-    color: #0f172a;
-    border: 1px solid #e2e8f0;
-    padding: 11px 13px;
-    font-size: 13.5px;
-    font-weight: 600;
-    border-radius: 6px;
+    padding: 13px 15px;
+    background: #eff6ff;
+    border: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e40af;
     cursor: pointer;
-    margin-top: 6px;
+    text-align: left;
 }
 
-.acc-btn.active {
+.acc-header.active {
     background: #0056b3;
     color: #ffffff;
-    border-color: #0056b3;
 }
 
-.acc-panel {
+.acc-content {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.25s ease-out;
     background: #ffffff;
-    border-left: 2px solid #0056b3;
-    margin-left: 4px;
-}
-
-.chapter-list {
-    list-style: none;
-    padding: 4px 0;
-    margin-bottom: 0;
 }
 
 .chapter-link {
     display: block;
-    padding: 9px 14px;
-    font-size: 13px;
+    padding: 11px 16px;
+    font-size: 13.5px;
     color: #334155;
     text-decoration: none;
+    border-bottom: 1px solid #f1f5f9;
     cursor: pointer;
+}
+
+.chapter-link:last-child {
+    border-bottom: none;
 }
 
 .chapter-link:hover {
@@ -246,65 +142,57 @@ body.portal-layout {
     color: #0056b3;
 }
 
-.chapter-link.active-link {
-    background: #e0ecff;
-    color: #0056b3;
-    font-weight: 600;
-}
-
 .chapter-link.pending {
     color: #94a3b8;
     cursor: not-allowed;
 }
 
-#main-content {
-    flex: 1;
-    height: 100%;
-    background: #f8fafc;
+/* Reader View (iframe) */
+#reader-view {
+    background: #ffffff;
 }
 
-#notes-frame {
+#content-frame {
     width: 100%;
     height: 100%;
     border: none;
     display: block;
 }
 
-#drawer-backdrop {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.45);
-    z-index: 1400;
+/* ==========================================================================
+   GENERIC NOTES STYLES (Used inside each note HTML file)
+   ========================================================================== */
+.note-body {
+    padding: 14px;
+    font-size: 14px;
+    line-height: 1.6;
+    background: #ffffff;
+    color: #1e293b;
+    overflow-y: auto;
 }
 
-#drawer-backdrop.active {
+.toc, nav {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 16px;
+}
+
+table {
     display: block;
+    width: 100% !important;
+    overflow-x: auto;
+    border-collapse: collapse;
+    margin: 12px 0;
 }
 
-@media (max-width: 768px) {
-    .top-nav {
-        display: flex;
-    }
+table th, table td {
+    padding: 8px 10px;
+    border: 1px solid #cbd5e1;
+    min-width: 100px;
+}
 
-    #sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 82%;
-        max-width: 320px;
-        transform: translateX(-100%);
-        box-shadow: 4px 0 16px rgba(0,0,0,0.25);
-    }
-
-    #sidebar.open {
-        transform: translateX(0);
-    }
-
-    #main-content {
-        width: 100vw;
-    }
+table th {
+    background: #f1f5f9;
 }
