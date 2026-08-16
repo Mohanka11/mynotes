@@ -119,6 +119,30 @@
             frame.src = this.getAttribute('data-src');
         });
     });
+const sidebar = document.getElementById('sidebar');
+const menuToggle = document.getElementById('menu-toggle');
+const overlay = document.getElementById('sidebar-overlay');
+
+// Toggle sidebar open/close
+function toggleMenu() {
+    sidebar.classList.toggle('open');
+    overlay.classList.toggle('active');
+    menuToggle.textContent = sidebar.classList.contains('open') ? '✕' : '☰';
+}
+
+menuToggle.addEventListener('click', toggleMenu);
+overlay.addEventListener('click', toggleMenu);
+
+// Auto-close sidebar on mobile when a chapter link is clicked
+document.querySelectorAll('.chapter-link').forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('active');
+            menuToggle.textContent = '☰';
+        }
+    });
+});
 </script>
 
 </body>
