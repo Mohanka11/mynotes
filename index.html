@@ -3,65 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Computer with AI - Study Portal</title>
+    <title>Computer with AI Study Notes</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="portal-layout">
 
-    <!-- Mobile Floating Navigation Button -->
-    <button id="menu-toggle" aria-label="Toggle Menu">☰ Chapters</button>
-    <div id="sidebar-overlay"></div>
+    <!-- Top Navigation Bar for Mobile -->
+    <header class="top-nav">
+        <button id="menu-btn" aria-label="Toggle Menu">☰ Chapters</button>
+        <span class="portal-title">📚 Computer with AI</span>
+    </header>
 
-    <!-- Sidebar Navigation -->
-    <aside id="sidebar">
-        <div class="sidebar-header">
-            <h2>📚 Computer with AI</h2>
-            <p>Class 5 to 8 Notes Repository</p>
-        </div>
+    <!-- Dim Background Overlay -->
+    <div id="drawer-backdrop"></div>
 
-        <div class="accordion-container">
-            <!-- Class 5 -->
-            <button class="acc-btn">Class 5 Computer With AI <span class="icon">▶</span></button>
-            <div class="acc-panel">
-                <ul class="chapter-list">
-                    <li><a class="chapter-link active-link" data-src="c5_ch1.html">Chapter 1: Evolution of Computers</a></li>
-                    <li><a class="chapter-link" data-src="c5_ch2.html">Chapter 2: Advanced Features of Word</a></li>
-                </ul>
+    <div class="portal-wrapper">
+        <!-- Slide-out Navigation Drawer -->
+        <aside id="sidebar">
+            <div class="sidebar-header">
+                <h2>📚 Computer with AI</h2>
+                <p>Class 5 to 8 Study Notes</p>
             </div>
 
-            <!-- Class 6 -->
-            <button class="acc-btn">Class 6 Computer With AI <span class="icon">▶</span></button>
-            <div class="acc-panel">
-                <ul class="chapter-list">
-                    <li><a class="chapter-link" data-src="c6_ch1.html">Chapter 1: Computer Languages</a></li>
-                    <li><a class="chapter-link" data-src="c6_ch2.html">Chapter 2: Working with Windows</a></li>
-                </ul>
-            </div>
+            <div class="accordion-container">
+                <!-- Class 5 -->
+                <button class="acc-btn">Class 5 Computer With AI <span class="arrow">▶</span></button>
+                <div class="acc-panel">
+                    <ul class="chapter-list">
+                        <li><a class="chapter-link active-link" data-src="c5_ch1.html">Ch 1: Evolution of Computers</a></li>
+                        <li><a class="chapter-link" data-src="c5_ch2.html">Ch 2: Advanced Features of Word</a></li>
+                    </ul>
+                </div>
 
-            <!-- Class 7 -->
-            <button class="acc-btn">Class 7 Computer With AI <span class="icon">▶</span></button>
-            <div class="acc-panel">
-                <ul class="chapter-list">
-                    <li><a class="chapter-link" data-src="c7_ch1.html">Chapter 1: Number System</a></li>
-                    <li><a class="chapter-link" data-src="c7_ch2.html">Chapter 2: Formulas in Excel</a></li>
-                </ul>
-            </div>
+                <!-- Class 6 -->
+                <button class="acc-btn">Class 6 Computer With AI <span class="arrow">▶</span></button>
+                <div class="acc-panel">
+                    <ul class="chapter-list">
+                        <li><a class="chapter-link" data-src="c6_ch1.html">Ch 1: Computer Languages</a></li>
+                        <li><a class="chapter-link" data-src="c6_ch2.html">Ch 2: Working with Windows</a></li>
+                    </ul>
+                </div>
 
-            <!-- Class 8 -->
-            <button class="acc-btn">Class 8 Computer With AI <span class="icon">▶</span></button>
-            <div class="acc-panel">
-                <ul class="chapter-list">
-                    <li><a class="chapter-link" data-src="c8_ch1.html">Chapter 1: Networking Concepts</a></li>
-                    <li><a class="chapter-link" data-src="c8_ch2.html">Chapter 2: Log On To Access</a></li>
-                </ul>
-            </div>
-        </div>
-    </aside>
+                <!-- Class 7 -->
+                <button class="acc-btn">Class 7 Computer With AI <span class="arrow">▶</span></button>
+                <div class="acc-panel">
+                    <ul class="chapter-list">
+                        <li><a class="chapter-link" data-src="c7_ch1.html">Ch 1: Number System</a></li>
+                        <li><a class="chapter-link" data-src="c7_ch2.html">Ch 2: Formulas in Excel</a></li>
+                    </ul>
+                </div>
 
-    <!-- Main Content Frame -->
-    <main id="main-content">
-        <iframe id="notes-frame" src="c5_ch1.html" title="Notes Content Frame"></iframe>
-    </main>
+                <!-- Class 8 -->
+                <button class="acc-btn active">Class 8 Computer With AI <span class="arrow">▼</span></button>
+                <div class="acc-panel" style="max-height: 500px;">
+                    <ul class="chapter-list">
+                        <li><a class="chapter-link" data-src="c8_ch1.html">Ch 1: Computer Networks</a></li>
+                        <li><a class="chapter-link" data-src="c8_ch2.html">Ch 2: Learn To Use MS Access 2016</a></li>
+                        <li><a class="chapter-link pending">Ch 3: Robotics</a></li>
+                        <li><a class="chapter-link pending">Ch 4: More On CSS</a></li>
+                        <li><a class="chapter-link pending">Ch 5: Lists And Tables In HTML</a></li>
+                        <li><a class="chapter-link pending">Ch 6: Cloud Based Computing</a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Fullscreen Notes Viewer -->
+        <main id="main-content">
+            <iframe id="notes-frame" src="c8_ch1.html" title="Notes Viewer"></iframe>
+        </main>
+    </div>
 
     <script>
         // Accordion functionality
@@ -69,58 +80,53 @@
         accButtons.forEach(btn => {
             btn.addEventListener('click', function() {
                 this.classList.toggle('active');
+                const arrow = this.querySelector('.arrow');
                 const panel = this.nextElementSibling;
+                
                 if (panel.style.maxHeight) {
                     panel.style.maxHeight = null;
+                    if (arrow) arrow.textContent = '▶';
                 } else {
                     panel.style.maxHeight = panel.scrollHeight + "px";
+                    if (arrow) arrow.textContent = '▼';
                 }
             });
         });
 
-        // Open the first class accordion by default
-        if (accButtons.length > 0) {
-            accButtons[0].classList.add('active');
-            accButtons[0].nextElementSibling.style.maxHeight = accButtons[0].nextElementSibling.scrollHeight + "px";
-        }
-
-        // Chapter Link Loading
+        // Drawer & Navigation controls
+        const sidebar = document.getElementById('sidebar');
+        const backdrop = document.getElementById('drawer-backdrop');
+        const menuBtn = document.getElementById('menu-btn');
         const frame = document.getElementById('notes-frame');
         const links = document.querySelectorAll('.chapter-link');
-        const sidebar = document.getElementById('sidebar');
-        const overlay = document.getElementById('sidebar-overlay');
-        const menuToggle = document.getElementById('menu-toggle');
 
+        function toggleDrawer() {
+            sidebar.classList.toggle('open');
+            backdrop.classList.toggle('active');
+        }
+
+        menuBtn.addEventListener('click', toggleDrawer);
+        backdrop.addEventListener('click', toggleDrawer);
+
+        // Load selected chapter into iframe
         links.forEach(link => {
-            link.addEventListener('click', function(e) {
+            link.addEventListener('click', function() {
                 if (this.classList.contains('pending')) return;
 
                 links.forEach(l => l.classList.remove('active-link'));
                 this.classList.add('active-link');
 
-                const targetSrc = this.getAttribute('data-src');
-                if (targetSrc) {
-                    frame.src = targetSrc;
+                const target = this.getAttribute('data-src');
+                if (target) {
+                    frame.src = target;
                 }
 
-                // Automatically close drawer on mobile after clicking
+                // Close drawer on selection
                 if (window.innerWidth <= 768) {
-                    sidebar.classList.remove('open');
-                    overlay.classList.remove('active');
-                    menuToggle.textContent = '☰ Chapters';
+                    toggleDrawer();
                 }
             });
         });
-
-        // Mobile drawer toggle
-        function toggleDrawer() {
-            sidebar.classList.toggle('open');
-            overlay.classList.toggle('active');
-            menuToggle.textContent = sidebar.classList.contains('open') ? '✕ Close' : '☰ Chapters';
-        }
-
-        menuToggle.addEventListener('click', toggleDrawer);
-        overlay.addEventListener('click', toggleDrawer);
     </script>
 </body>
 </html>
