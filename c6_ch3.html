@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Summary Notes - Formulas and Functions in MS Excel</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<header id="top">
+
+<h1>Comprehensive Summary Notes</h1>
+<h3>Chapter 3: Formulas and Functions in MS Excel</h3>
+
+</header>
+
+<div class="container">
+
+<div class="toc">
+
+<h2>📚 Table of Contents</h2>
+
+<ul>
+
+<li><a href="#understanding">1. Understanding Formulas</a></li>
+
+<li><a href="#types-formulas">2. Types of Formulas</a></li>
+
+<li><a href="#referencing">3. Types of Cell Referencing</a></li>
+
+<li><a href="#functions">4. Excel Functions</a></li>
+
+<li><a href="#wizard">5. The Function Wizard</a></li>
+
+<li><a href="#errors">6. Common Error Results</a></li>
+
+</ul>
+
+</div>
+
+<!-- SECTION 1 -->
+
+<section id="understanding">
+
+<h2>1. Understanding Formulas</h2>
+
+<p>
+<strong>Definition:</strong> Formulas are equations used to perform calculations on worksheet values.
+</p>
+
+<p>
+<strong>Start Character:</strong> Every formula must begin with an equal sign (<code>=</code>). If a space is given before <code>=</code>, Excel treats the cell content as text rather than a formula.
+</p>
+
+<p>
+<strong>Components:</strong> Can consist of constants, numbers, cell addresses/references, names, cell ranges, operators, or built-in library functions.
+</p>
+
+<div class="note">
+
+<strong>Key Point:</strong><br>
+
+Always ensure no spaces precede the <code>=</code> sign so that Excel evaluates the expression as a formula instead of plain text.
+
+</div>
+
+<a href="#top" class="back">⬆ Back to Top</a>
+
+</section>
+
+<!-- SECTION 2 -->
+
+<section id="types-formulas">
+
+<h2>2. Types of Formulas</h2>
+
+<table>
+
+<tr>
+<th>Formula Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+
+<tr>
+<td><strong>Basic Formula</strong></td>
+<td>Contains only one type of operator (such as only addition +).</td>
+<td><code>=A1+A2+A3</code></td>
+</tr>
+
+<tr>
+<td><strong>Compound Formula</strong></td>
+<td>Used when more than one operator is required to perform calculations.</td>
+<td><code>=B3*B4*B5/100</code></td>
+</tr>
+
+<tr>
+<td><strong>Cell Ranges</strong></td>
+<td>Groups of continuous cells used in a formula to save time.</td>
+<td><code>=SUM(B3:B8)</code></td>
+</tr>
+
+<tr>
+<td><strong>Text Formula (Concatenation)</strong></td>
+<td>Simple text values enclosed in double quotes joined using the ampersand (<code>&amp;</code>) operator.</td>
+<td><code>"Microsoft" &amp; "Excel"</code> &rarr; <em>Microsoft Excel</em></td>
+</tr>
+
+</table>
+
+<a href="#top" class="back">⬆ Back to Top</a>
+
+</section>
+
+<!-- SECTION 3 -->
+
+<section id="referencing">
+
+<h2>3. Types of Cell Referencing</h2>
+
+<table>
+
+<tr>
+<th>Referencing Type</th>
+<th>Syntax / Format</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td><strong>Relative Referencing</strong><br>(Default)</td>
+<td><code>A1</code></td>
+<td>Cell references change automatically according to the position where the formula is copied. Neither the column nor row parts are fixed.</td>
+</tr>
+
+<tr>
+<td><strong>Absolute Referencing</strong></td>
+<td><code>$B$3</code></td>
+<td>Both the column and row are fixed with a dollar sign (<code>$</code>). The reference remains unchanged when the formula is copied to other cells.</td>
+</tr>
+
+<tr>
+<td><strong>Mixed Referencing</strong></td>
+<td><code>$B3</code> or <code>C$3</code></td>
+<td>Only one part of the cell address (either column or row) is fixed with a <code>$</code> sign.</td>
+</tr>
+
+<tr>
+<td><strong>Referencing Another Worksheet</strong></td>
+<td><code>Sheet1!D7</code></td>
+<td>To reference a cell in another sheet, use the worksheet name followed by an exclamation mark (<code>!</code>) and the cell address.</td>
+</tr>
+
+</table>
+
+<a href="#top" class="back">⬆ Back to Top</a>
+
+</section>
+
+<!-- SECTION 4 -->
+
+<section id="functions">
+
+<h2>4. Excel Functions</h2>
+
+<p>
+Functions are predefined commands that act on a cell or range of cells to perform operations quickly. They consist of the function name and arguments inside round brackets, always beginning with an <code>=</code> sign.
+</p>
+
+<h3>Math &amp; Trig Functions</h3>
+
+<ul>
+
+<li><strong>INT:</strong> Rounds a number down to the nearest integer.</li>
+
+<li><strong>LCM:</strong> Returns the least common multiple of a range of numbers.</li>
+
+<li><strong>MOD:</strong> Returns the remainder after division.</li>
+
+<li><strong>POWER:</strong> Raises a number to a specified power.</li>
+
+<li><strong>PRODUCT:</strong> Multiplies numbers in a given range.</li>
+
+<li><strong>QUOTIENT:</strong> Returns the integer quotient of a division.</li>
+
+<li><strong>ROUND:</strong> Rounds a number to a specified number of decimal digits.</li>
+
+<li><strong>SQRT:</strong> Returns the square root of a number.</li>
+
+</ul>
+
+<h3>Statistical Functions</h3>
+
+<ul>
+
+<li><strong>SUM:</strong> Adds all numbers in a given range.</li>
+
+<li><strong>AVERAGE:</strong> Calculates the mean of a range of numbers.</li>
+
+<li><strong>COUNT:</strong> Counts cells containing numeric values.</li>
+
+<li><strong>MAX / MIN:</strong> Displays the largest or smallest value in a range.</li>
+
+</ul>
+
+<h3>Text, Date &amp; Logical Functions</h3>
+
+<ul>
+
+<li><strong>LEN (Text):</strong> Counts the number of characters in a text string.</li>
+
+<li><strong>TODAY (Date &amp; Time):</strong> Displays the current date.</li>
+
+<li><strong>IF (Logical):</strong> Evaluates a condition and returns one value if TRUE, and another if FALSE.<br>
+<em>Syntax:</em> <code>=IF(condition, value_if_True, value_if_False)</code></li>
+
+</ul>
+
+<a href="#top" class="back">⬆ Back to Top</a>
+
+</section>
+
+<!-- SECTION 5 -->
+
+<section id="wizard">
+
+<h2>5. The Function Wizard</h2>
+
+<p>
+The <strong>Insert Function</strong> command (<code>fx</code> button) is located in the <strong>Function Library</strong> group on the <strong>Formulas</strong> tab of the ribbon.
+</p>
+
+<div class="note">
+
+<strong>How it helps:</strong><br>
+
+It helps users search for functions by typing a description or choosing a category (such as Math &amp; Trig, Statistical, etc.) to easily configure parameters using a step-by-step dialog box.
+
+</div>
+
+<a href="#top" class="back">⬆ Back to Top</a>
+
+</section>
+
+<!-- SECTION 6 -->
+
+<section id="errors">
+
+<h2>6. Common Error Results</h2>
+
+<table>
+
+<tr>
+<th>Error Code</th>
+<th>Reason / Cause</th>
+</tr>
+
+<tr>
+<td><code>####</code></td>
+<td>The column is not wide enough to display the numeric result.</td>
+</tr>
+
+<tr>
+<td><code>#DIV/0!</code></td>
+<td>Division by zero is attempted (invalid operation).</td>
+</tr>
+
+<tr>
+<td><code>#VALUE!</code></td>
+<td>The formula contains an invalid data type or operation.</td>
+</tr>
+
+<tr>
+<td><code>#N/A</code></td>
+<td>The referenced data is not available.</td>
+</tr>
+
+</table>
+
+<a href="#top" class="back">⬆ Back to Top</a>
+
+</section>
+
+</div>
+
+<footer>
+
+Formulas and Functions in MS Excel Summary Notes
+
+</footer>
+<script src="exporter.js"></script>
+</body>
+</html>
