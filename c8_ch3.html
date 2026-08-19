@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robots and Robotics Study Guide</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #eff6ff;
+            --accent: #3b82f6;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg);
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 2.25rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .section-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title span.badge {
+            background-color: var(--primary);
+            color: #ffffff;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            margin-right: 0.75rem;
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        strong {
+            color: var(--text-main);
+        }
+
+        .page-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: var(--accent);
+            background-color: var(--primary-light);
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-left: 0.35rem;
+        }
+
+        /* Loop Box for Sense-Think-Act */
+        .loop-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .loop-step {
+            background-color: var(--primary-light);
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .loop-step h4 {
+            color: var(--primary);
+            margin-bottom: 0.35rem;
+            font-size: 1.05rem;
+        }
+
+        .note-box {
+            background-color: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            color: #92400e;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Robotics & Automation Summary</h1>
+        <p>Comprehensive Overview & Key Concepts</p>
+    </header>
+
+    <!-- 1. Introduction -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">1</span> Introduction to Robots and Robotics</h2>
+        <ul>
+            <li><strong>Origin of the Word:</strong> Originates from the Slavonic word <em>‘robota’</em>, which translates to work or labour. <span class="page-tag">p. 35</span></li>
+            <li><strong>Definition of a Robot:</strong> A machine programmed to carry out a complex series of tasks, mimicking or copying human actions to make human labor easier and quicker. <span class="page-tag">p. 35</span></li>
+            <li><strong>Definition of Robotics:</strong> The branch of science, engineering, and technology that combines to design and build human-like machines capable of sensing, thinking, and acting according to algorithms. <span class="page-tag">p. 38, 39</span></li>
+            <li><strong>Historical Fact:</strong> Genghis, a six-legged, insect-like robot, was developed in 1980 by roboticist Rodney Brooks at MIT. <span class="page-tag">p. 35</span></li>
+        </ul>
+    </section>
+
+    <!-- 2. Advantages and Real-World Applications -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">2</span> Advantages and Real-World Applications</h2>
+        <p style="margin-bottom: 0.75rem; color: var(--text-muted);">Robots automate repetitive, highly precise, or dangerous tasks across multiple domains: <span class="page-tag">p. 36, 38</span></p>
+        <ul>
+            <li><strong>Homes:</strong> Smart appliances like the Roomba are used for automated house cleaning. <span class="page-tag">p. 35</span></li>
+            <li><strong>Travel:</strong> Autonomous, self-driving cars manufactured by companies such as Tesla, BMW, and Volkswagen, operated via AI systems. <span class="page-tag">p. 36</span></li>
+            <li><strong>Healthcare:</strong> High-precision surgery assistance, manufacturing artificial limbs, generating test reports, and elderly care (e.g., Toyota Healthcare assistant helps patients regain walking ability). <span class="page-tag">p. 36</span></li>
+            <li><strong>Manufacturing Assembly & Packing:</strong> High-speed, high-accuracy assembly of complex parts (e.g., SCARA robots designed for pick-and-place/assembly operations). <span class="page-tag">p. 36</span></li>
+            <li><strong>Logistics:</strong> Automated warehouse storage and transit (e.g., drones handling shipping and goods delivery). <span class="page-tag">p. 36</span></li>
+            <li><strong>Hotel Industry:</strong> Front desk management, information sharing, storage, and check-in/out via voice and facial recognition (e.g., the Botlr robot). <span class="page-tag">p. 36</span></li>
+        </ul>
+    </section>
+
+    <!-- 3. Types of Robots -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">3</span> Types of Robots</h2>
+        <p style="margin-bottom: 0.75rem; color: var(--text-muted);">Five primary classifications: <span class="page-tag">p. 36, 39</span></p>
+        <ul>
+            <li><strong>Pre-Programmed Robots:</strong> Automatic machines designed for repetitive tasks, often replacing humans in hazardous environments (e.g., robotic firefighting systems that analyze, locate, and conduct search-and-rescue operations). <span class="page-tag">p. 36</span></li>
+            <li><strong>Humanoid Robots</strong> <span class="page-tag">p. 36, 39</span></li>
+            <li><strong>Autonomous Robots</strong> <span class="page-tag">p. 36, 39</span></li>
+            <li><strong>Teleoperated Robots</strong> <span class="page-tag">p. 36, 39</span></li>
+            <li><strong>Augmented Robots</strong> <span class="page-tag">p. 36, 39</span></li>
+        </ul>
+    </section>
+
+    <!-- 4. How Robots Work -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">4</span> How Robots Work: The "Sense-Think-Act" Principle</h2>
+        <div class="note-box">
+            <strong>Key Distinction:</strong> While all robots are machines, not all machines qualify as robots. <span class="page-tag">p. 38, 39</span>
+        </div>
+        <p style="color: var(--text-muted);">A robot relies on a continuous three-step loop to function: <span class="page-tag">p. 38</span></p>
+        
+        <div class="loop-container">
+            <div class="loop-step">
+                <h4>1. Sense</h4>
+                <p>Gathers environmental data using sensors like cameras (sight), microphones (sound), and touch sensors (texture/handling). <span class="page-tag">p. 38</span></p>
+            </div>
+            <div class="loop-step">
+                <h4>2. Think</h4>
+                <p>Analyzes input data to recognize patterns and compare scenarios using pre-programmed algorithms. <span class="page-tag">p. 38</span></p>
+            </div>
+            <div class="loop-step">
+                <h4>3. Act</h4>
+                <p>Executes calculated decisions using internal motors and actuators. <span class="page-tag">p. 38</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Key Characteristics & Limitations -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">5</span> Key Characteristics & Limitations</h2>
+        <ul>
+            <li><strong>Human Dependency:</strong> Robots must always be operated and given commands by humans. <span class="page-tag">p. 38</span></li>
+            <li><strong>No Human Replacement:</strong> Because they rely entirely on human commands and algorithms, robots cannot replace humans.</li>
+        </ul>
+    </section>
+</div>
+
+</body>
+</html>
