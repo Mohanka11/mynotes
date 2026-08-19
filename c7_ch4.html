@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet, Cybersecurity & Safety Study Guide</title>
+    <style>
+        :root {
+            --primary: #0f766e;
+            --primary-light: #f0fdfa;
+            --accent: #0284c7;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+            --danger-bg: #fef2f2;
+            --danger-border: #ef4444;
+            --danger-text: #991b1b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg);
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 2.25rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .section-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title span.badge {
+            background-color: var(--primary);
+            color: #ffffff;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        strong {
+            color: var(--text-main);
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .feature-card {
+            background-color: var(--primary-light);
+            border: 1px solid #ccfbf1;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .feature-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.35rem;
+            font-size: 1.05rem;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .note-box {
+            background-color: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .alert-box {
+            background-color: var(--danger-bg);
+            border-left: 4px solid var(--danger-border);
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            color: var(--danger-text);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #f1f5f9;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 0.1rem 0.45rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .timeline-item {
+            border-left: 2px solid var(--primary);
+            padding-left: 1rem;
+            margin-left: 0.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -5px;
+            top: 6px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--primary);
+        }
+
+        .timeline-year {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Internet & Cybersecurity Guide</h1>
+        <p>Viruses, Threats, Ethics, Safety Practices & Digital Footprints</p>
+    </header>
+
+    <!-- 1. Introduction to the Internet -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">1</span> Introduction to the Internet</h2>
+        <ul>
+            <li><strong>Definition:</strong> A worldwide network of computers that connects computing systems globally.</li>
+            <li><strong>Most Common Service:</strong> The World Wide Web (WWW or Web), hosting websites, blogs, and vast resources across virtually every topic.</li>
+            <li><strong>Access & Risk:</strong> Web pages are publicly accessible unless password-protected or restricted. However, online data is not always reliable and can host malicious computer viruses.</li>
+        </ul>
+    </section>
+
+    <!-- 2. Computer Viruses -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">2</span> Computer Viruses</h2>
+        <div class="note-box">
+            <strong>Full Form:</strong> <strong>VIRUS</strong> stands for <em>Vital Information Resources Under Seize</em>.
+        </div>
+        <ul>
+            <li><strong>Definition:</strong> A computer program deliberately engineered by creators to replicate itself across different storage areas or infect remote machines automatically.</li>
+            <li><strong>Nature:</strong> Not all harmful programs are viruses, and not all viruses cause destructive damage (the majority are designed merely to irritate users).</li>
+            <li><strong>Hardware Safety:</strong> Viruses target software and data; they do not physically damage hardware components such as keyboards or monitors.</li>
+        </ul>
+    </section>
+
+    <!-- 3. Harm and Symptoms -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">3</span> Harm & Symptoms of Infection</h2>
+        <p style="margin-bottom: 0.5rem;"><strong>Harm Caused:</strong> Consuming storage via infinite replication, file corruption, permanent data deletion, and transmitting stolen passwords or banking details over the web.</p>
+        <p style="margin-bottom: 0.5rem; font-weight: 600;">Key Symptoms of an Infected System:</p>
+        <ul>
+            <li>Frequent system freezes, lockups, and degraded performance.</li>
+            <li>Unusual screen distortions or visual glitches.</li>
+            <li>Unexplained data loss or missing files.</li>
+            <li>Unexpected system error dialogs and pop-up messages.</li>
+        </ul>
+    </section>
+
+    <!-- 4. Infection Vectors -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">4</span> How a Computer Gets Infected</h2>
+        <ul>
+            <li>Connecting and opening files from infected external media (CDs, pen drives).</li>
+            <li>Opening malicious email attachments.</li>
+            <li>Visiting untrusted websites and downloading infected executables.</li>
+            <li>Launching an infected software application, which subsequently spreads into memory and infects other programs.</li>
+        </ul>
+    </section>
+
+    <!-- 5. History of Viruses -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">5</span> History of Computer Viruses</h2>
+        <div class="timeline-item">
+            <div class="timeline-year">1982 — Elk Cloner</div>
+            <p>Created by Rich Skrenta; attached to Apple DOS 3.3 and spread via floppy disks. Originally conceived as a high-school prank that displayed a poem on the 50th boot.</p>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-year">1986 — Brain</div>
+            <p>Developed by Pakistani brothers Basit and A. F. Alvi as the first PC boot sector virus, intended to prevent unauthorized copying of their software.</p>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-year">Mid-1990s — Macro Viruses</div>
+            <p>Emerged using embedded scripting languages inside productivity files like Microsoft Word and Excel.</p>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-year">Modern Era — Network Distribution</div>
+            <p>Emails, instant messaging channels, and chat applications became the primary global delivery vectors.</p>
+        </div>
+    </section>
+
+    <!-- 6. Types of Computer Viruses -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">6</span> Types of Computer Viruses</h2>
+        <div class="grid-cards">
+            <div class="feature-card">
+                <h4>Bombs <span class="tag">e.g., Logic Bomb</span></h4>
+                <p>Designed to remain dormant until triggered by a specific event or date to execute payload damage.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Boot Sector Viruses <span class="tag">e.g., Elk Cloner, Brain</span></h4>
+                <p>Targets the master boot record/sector of the disk containing critical system startup instructions.</p>
+            </div>
+            <div class="feature-card">
+                <h4>E-Mail Viruses <span class="tag">e.g., Gift Card Scam</span></h4>
+                <p>Distributes via malicious attachments and replicates to the hard disk upon opening.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Trojans <span class="tag">e.g., Bit Frost</span></h4>
+                <p>Disguised as legitimate software to deceive users into execution, then steals sensitive data.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Worms <span class="tag">e.g., Blaster, Morris</span></h4>
+                <p>Self-replicating standalone programs that consume network bandwidth and drive space without host files.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Browser Hijackers <span class="tag">e.g., CWS</span></h4>
+                <p>Modifies browser configuration settings to forcibly redirect user queries to unwanted or infected domains.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Web Scripting Viruses <span class="tag">e.g., DDoS targets</span></h4>
+                <p>Breaches web application security to inject malicious scripts or automate unauthorized activities on websites.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Polymorphic Viruses <span class="tag">e.g., VIRLOCK, BAGLE</span></h4>
+                <p>Modifies its binary signature each replication cycle to evade traditional signature-based antivirus scanners.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Protecting Your Computer -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">7</span> Protecting Your Computer</h2>
+        <ul>
+            <li>Avoid using removable storage devices (pen drives, CDs) from unknown sources without scanning.</li>
+            <li>Download software and resources exclusively from verified, reputable repositories.</li>
+            <li>Never download or open email attachments from unknown or unverified senders.</li>
+            <li>Maintain active antivirus protection with up-to-date virus definition databases.</li>
+            <li>Immediately exit websites that initiate unauthorized URL redirects.</li>
+        </ul>
+    </section>
+
+    <!-- 8. Unethical Practices on the Internet -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">8</span> Unethical Practices on the Internet</h2>
+        <ul>
+            <li>
+                <strong>Plagiarism:</strong> Presenting another person's creative work, text, or ideas as your own without authorization or proper attribution.
+                <br><em>Prevention:</em> Cite references accurately, secure written permissions, and quote source material directly.
+            </li>
+            <li>
+                <strong>Cyberbullying:</strong> Harassing, intimidating, or demeaning individuals using digital communication tools.
+                <br><em>Prevention:</em> Restrict visibility of personal media, set profiles to private, use strong authentication, and pause before posting.
+            </li>
+            <li>
+                <strong>Cyberstalking:</strong> Persistent online tracking, monitoring, or intimidation intended to cause distress (often encompasses cyberbullying and identity theft).
+            </li>
+            <li>
+                <strong>Hacking:</strong> Gaining unauthorized access to remote systems to manipulate data or control computing resources.
+                <br><em>Prevention:</em> Patch software vulnerabilities, avoid pirated programs, update antivirus tools, and enforce unique passwords.
+            </li>
+            <li>
+                <strong>Phishing:</strong> Deceptive emails masquerading as trusted institutions (like banks) to harvest credentials and financial info.
+                <br><em>Prevention:</em> Disregard unsolicited verification requests, verify senders, and never click embedded authentication links.
+            </li>
+            <li>
+                <strong>Spamming & Mail Bombing:</strong> Flooding inboxes with unwanted promotional bulk messages (spam) or overloading mail server storage capacities with automated mass emails (mail bombing).
+                <br><em>Prevention:</em> Utilize strict email spam filters and avoid publishing primary email addresses publicly.
+            </li>
+        </ul>
+    </section>
+
+    <!-- 9. Safety Measures -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">9</span> Best Practice Safety Measures</h2>
+        <ul>
+            <li><strong>Antivirus & Scans:</strong> Configure security suites to run automated, scheduled disk integrity scans.</li>
+            <li><strong>Password Strength:</strong> Combine uppercase, lowercase, numbers, and special symbols; rotate passwords on a regular basis.</li>
+            <li><strong>Data Backups:</strong> Maintain regular redundant copies of essential files across independent drives or cloud storage.</li>
+            <li><strong>Access Controls:</strong> Never leave active workstations unattended or unlocked in shared or public spaces.</li>
+            <li><strong>Safe Disposal:</strong> Securely sanitize, overwrite, or destroy all storage drives prior to selling or recycling old computers.</li>
+            <li><strong>Network Firewall:</strong> Enable hardware or software firewalls to inspect and filter untrusted incoming internet traffic.</li>
+        </ul>
+    </section>
+
+    <!-- 10. Digital Footprints -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">10</span> Digital Footprints</h2>
+        <div class="note-box">
+            <strong>Definition:</strong> The persistent trail of data and online transaction logs left by users across the web (also called a <em>digital dossier</em>).
+        </div>
+        <div class="grid-cards">
+            <div class="feature-card">
+                <h4>Passive Footprint</h4>
+                <p>Data gathered without active user awareness (e.g., web server logs recording IP addresses, geographic location, and device details).</p>
+            </div>
+            <div class="feature-card">
+                <h4>Active Footprint</h4>
+                <p>Data shared deliberately by the user (e.g., submitting online registrations, publishing posts, or uploading multimedia).</p>
+            </div>
+        </div>
+        <p style="margin-top: 1rem; font-weight: 600;">Best Safeguards:</p>
+        <ul style="margin-top: 0.5rem;">
+            <li>Engage private browsing modes to limit tracking cookies.</li>
+            <li>Refrain from sharing sensitive personal records on unencrypted or untrusted websites.</li>
+            <li>Audit social media posts and media uploads for personally identifiable metadata.</li>
+        </ul>
+    </section>
+</div>
+
+</body>
+</html>

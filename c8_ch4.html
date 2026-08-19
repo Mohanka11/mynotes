@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Basics: Inline Styles, Text, Fonts, Margins & Borders</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-light: #eff6ff;
+            --accent: #f59e0b;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+            --code-bg: #f1f5f9;
+            --code-color: #0f172a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg);
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 2.25rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .section-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title span.badge {
+            background-color: var(--primary);
+            color: #ffffff;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        strong {
+            color: var(--text-main);
+        }
+
+        code {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            background-color: var(--code-bg);
+            color: var(--code-color);
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+            border: 1px solid #e2e8f0;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .feature-card {
+            background-color: var(--primary-light);
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .feature-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.35rem;
+            font-size: 1.05rem;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .alert-box {
+            background-color: #fffbeb;
+            border-left: 4px solid var(--accent);
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            margin-top: 0.75rem;
+            font-size: 0.95rem;
+            color: #92400e;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>CSS Properties Study Guide</h1>
+        <p>Inline Styling, Text Formatting, Typography, Box Margins & Borders</p>
+    </header>
+
+    <!-- 1. Introduction & Inline CSS Style -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">1</span> Introduction & Inline CSS Style</h2>
+        <ul>
+            <li><strong>Purpose of CSS:</strong> Used to control the presentation, styling, and visual layout of HTML elements on a web page.</li>
+            <li><strong>Inline CSS:</strong> Applied directly to an individual HTML tag using the <code>style</code> attribute (e.g., <code>&lt;p style="color: blue;"&gt;</code>).</li>
+        </ul>
+        <div class="alert-box">
+            <strong>Disadvantages of Inline CSS:</strong>
+            <ul style="margin-top: 0.5rem; gap: 0.35rem;">
+                <li>It only impacts the specific tag where it is defined, making it unsuitable for site-wide styling.</li>
+                <li>Lacks reusability; styles must be manually duplicated across every element, complicating code maintenance.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 2. Text Properties -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">2</span> Text Properties</h2>
+        <p style="margin-bottom: 0.75rem; color: var(--text-muted);">Text decoration and formatting properties control the alignment, color, and spacing of content:</p>
+        <div class="grid-cards">
+            <div class="feature-card">
+                <h4><code>text-align</code></h4>
+                <p>Horizontally aligns text relative to parent container margins (<code>left</code>, <code>right</code>, <code>center</code>, <code>justify</code>).</p>
+            </div>
+            <div class="feature-card">
+                <h4><code>text-decoration</code></h4>
+                <p>Applies or removes decorative line styling (<code>overline</code>, <code>line-through</code>, <code>underline</code>, <code>none</code>).</p>
+            </div>
+            <div class="feature-card">
+                <h4><code>color</code></h4>
+                <p>Sets the text color using standard color keywords, Hex codes (e.g., <code>#ff0000</code>), or RGB notation.</p>
+            </div>
+            <div class="feature-card">
+                <h4><code>text-transform</code></h4>
+                <p>Modifies capitalization casing across text (<code>capitalize</code>, <code>uppercase</code>, <code>lowercase</code>, <code>none</code>).</p>
+            </div>
+            <div class="feature-card">
+                <h4><code>text-shadow</code></h4>
+                <p>Adds drop shadows using horizontal offset (<code>h-shadow</code>), vertical offset (<code>v-shadow</code>), and color. Multiple shadows can be separated by commas.</p>
+            </div>
+            <div class="feature-card">
+                <h4><code>text-indent</code></h4>
+                <p>Indents the first line of a paragraph using specific lengths (pixels) or percentage values.</p>
+            </div>
+            <div class="feature-card">
+                <h4><code>line-height</code></h4>
+                <p>Adjusts vertical spacing between lines of text (supports numbers, length units, percentages, or <code>normal</code>).</p>
+            </div>
+            <div class="feature-card">
+                <h4><code>word-break</code></h4>
+                <p>Specifies line breaking rules for handling word wrapping on narrow display boundaries.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Font Properties -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">3</span> Font Properties</h2>
+        <ul>
+            <li><strong>Font Family (<code>font-family</code>):</strong> Declares a prioritized list of specific typefaces (e.g., <em>Arial</em>, <em>Times New Roman</em>) and fallback generic families (e.g., <code>sans-serif</code>).</li>
+            <li><strong>Font Size (<code>font-size</code>):</strong> Sets font scale using absolute or relative units such as pixels (<code>px</code>), percentage (<code>%</code>), points (<code>pt</code>), or <code>em</code>.</li>
+            <li><strong>Font Style (<code>font-style</code>):</strong> Specifies typeface slant using <code>normal</code>, <code>italic</code>, or <code>oblique</code>.</li>
+            <li><strong>Font Shorthand (<code>font</code>):</strong> Combines <code>font-style</code>, <code>font-size</code>, and <code>font-family</code> into a single compact declaration.</li>
+        </ul>
+    </section>
+
+    <!-- 4. Margin Properties -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">4</span> Margin Properties</h2>
+        <ul>
+            <li><strong>Purpose:</strong> Clears an area around elements outside the border to control layout spacing.</li>
+            <li><strong>Directions:</strong> Can be declared independently per side using <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code>.</li>
+            <li><strong>Accepted Values:</strong> Supports browser-calculated <code>auto</code>, absolute lengths (<code>px</code>, <code>cm</code>, <code>pt</code>), relative percentages (<code>%</code>), as well as negative values for overlapping layouts.</li>
+        </ul>
+    </section>
+
+    <!-- 5. Border Properties -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">5</span> Border Properties</h2>
+        <div class="grid-cards">
+            <div class="feature-card">
+                <h4><code>border-width</code></h4>
+                <p>Configures border thickness via standard units (<code>px</code>, <code>pt</code>, <code>cm</code>) or keywords (<code>thin</code>, <code>medium</code>, <code>thick</code>).</p>
+            </div>
+            <div class="feature-card">
+                <h4><code>border-style</code></h4>
+                <p>Sets visual border pattern (<code>solid</code>, <code>dashed</code>, <code>dotted</code>, <code>double</code>, <code>groove</code>, <code>ridge</code>, <code>inset</code>, <code>outset</code>, <code>none</code>, <code>hidden</code>).</p>
+            </div>
+            <div class="feature-card">
+                <h4><code>border-color</code></h4>
+                <p>Sets border colors using keywords, Hex, or RGB. Supports 1–4 side values; defaults to inheriting the parent element's text color if omitted.</p>
+            </div>
+            <div class="feature-card">
+                <h4><code>border</code> (Shorthand)</h4>
+                <p>Specifies <code>border-width</code>, <code>border-style</code>, and <code>border-color</code> simultaneously in one line (e.g., <code>border: 2px solid #333;</code>).</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artificial Intelligence (AI) Study Guide</title>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-light: #eef2ff;
+            --accent: #06b6d4;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg);
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 2.25rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .section-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title span.badge {
+            background-color: var(--primary);
+            color: #ffffff;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        strong {
+            color: var(--text-main);
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .feature-card {
+            background-color: var(--primary-light);
+            border: 1px solid #c7d2fe;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .feature-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.35rem;
+            font-size: 1.05rem;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .note-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid #16a34a;
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            color: #15803d;
+        }
+
+        .step-list {
+            list-style: none;
+            counter-reset: step-counter;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .step-item {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .step-item::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 28px;
+            height: 28px;
+            background-color: var(--primary);
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Artificial Intelligence Study Guide</h1>
+        <p>Core Concepts, Branches, Classifications & Practical Machine Learning</p>
+    </header>
+
+    <!-- 1. AI Overview -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">1</span> Artificial Intelligence (AI) Overview</h2>
+        <ul>
+            <li><strong>Definition:</strong> The ability of a machine to think, understand, learn, and work like human beings. It is a computer program capable of learning and making decisions based on data.</li>
+            <li><strong>Core Aim:</strong> The study of how a human brain thinks, learns, decides, and works when solving complex problems.</li>
+            <li><strong>Real-World Application:</strong> Facial recognition is a primary application, executed via photo scans, video footage, or direct facial scanning.</li>
+        </ul>
+    </section>
+
+    <!-- 2. ML vs Deep Learning -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">2</span> Machine Learning vs. Deep Learning</h2>
+        <div class="grid-cards">
+            <div class="feature-card">
+                <h4>Machine Learning (ML)</h4>
+                <p>A branch of AI enabling computers to act without explicit programming. It analyzes historical data patterns to predict future output values.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Deep Learning</h4>
+                <p>A specialized subfield of AI inspired by the neural architecture and learning mechanisms of the human brain (powering tasks like facial recognition).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Types of AI -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">3</span> Types of Artificial Intelligence</h2>
+        <p style="margin-bottom: 0.75rem; color: var(--text-muted);">AI is categorized into three stages based on capability:</p>
+        <div class="grid-cards">
+            <div class="feature-card">
+                <h4>Artificial Narrow Intelligence (ANI)</h4>
+                <p>Systems engineered and specialized to perform a single dedicated task exceptionally well.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Artificial General Intelligence (AGI)</h4>
+                <p>A hypothetical machine capable of comprehending, learning, and reasoning about the world on par with human intellect.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Artificial Super Intelligence (ASI)</h4>
+                <p>An advanced form of AI that surpasses human capabilities across virtually all economically valuable work and cognitive tasks.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Professional Roles in AI -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">4</span> Professional Roles in AI</h2>
+        <ul>
+            <li><strong>AI Engineers & Scientists:</strong> Tackle complex technical problems by implementing traditional software architectures alongside machine learning models.</li>
+            <li><strong>AI Researchers:</strong> Specialize in designing experiments, developing novel algorithmic approaches, and analyzing structured data.</li>
+            <li><strong>Robotics Experts:</strong> Build and maintain automated robotic systems for enterprise workflows (operating with variable levels of human supervision).</li>
+            <li><strong>Data Scientists:</strong> Collect, process, analyze, and build predictive models on massive datasets. They synthesize mathematics, statistics, and computer science to drive organizational strategy.</li>
+        </ul>
+    </section>
+
+    <!-- 5. AI-Teachable Machine -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">5</span> Google Teachable Machine</h2>
+        <div class="note-box">
+            <strong>Definition:</strong> A web-based tool developed by Google that enables users to rapidly build custom machine learning models using camera inputs that process visual data similar to human vision.
+        </div>
+
+        <p style="font-weight: 600; margin-top: 1rem;">Step-by-Step Creation Guide:</p>
+        <ol class="step-list">
+            <li class="step-item">
+                <strong>Open Website:</strong> Visit <a href="https://teachablemachine.withgoogle.com/" target="_blank" rel="noopener noreferrer">https://teachablemachine.withgoogle.com/</a> and click <em>Get Started</em>.
+            </li>
+            <li class="step-item">
+                <strong>Start Project:</strong> Select <em>New Project</em>, choose <em>Image Project</em>, and select <em>Standard image model</em>.
+            </li>
+            <li class="step-item">
+                <strong>Define Classes:</strong> Label your categories (e.g., rename Class 1 to <em>'Proper Uniform'</em> and Class 2 to <em>'Improper Uniform'</em>).
+            </li>
+            <li class="step-item">
+                <strong>Feed Data (Upload Images):</strong> Provide sample imagery via drag-and-drop or import from Google Drive (a high volume of diverse samples increases accuracy).
+            </li>
+            <li class="step-item">
+                <strong>Train the Model:</strong> Click <em>Train Model</em> to begin processing sample data and compiling the weights.
+            </li>
+            <li class="step-item">
+                <strong>Preview:</strong> Test the live camera feed in the preview panel to observe real-time classification probability bars.
+            </li>
+        </ol>
+    </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Workspace & Google Forms Guide</title>
+    <style>
+        :root {
+            --primary: #1a73e8;
+            --primary-light: #e8f0fe;
+            --secondary: #7248b9;
+            --secondary-light: #f3e8fd;
+            --accent: #1e8e3e;
+            --text-main: #202124;
+            --text-muted: #5f6368;
+            --bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --border: #dadce0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg);
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 2.25rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .section-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 6px rgba(60, 64, 67, 0.08);
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title span.badge {
+            background-color: var(--primary);
+            color: #ffffff;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        strong {
+            color: var(--text-main);
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .feature-card {
+            background-color: var(--primary-light);
+            border: 1px solid #cce0ff;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .feature-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.35rem;
+            font-size: 1.05rem;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #f1f3f4;
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 0.2rem 0.55rem;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            margin: 0.2rem 0.15rem;
+        }
+
+        .tag-list {
+            margin-top: 0.75rem;
+        }
+
+        .note-box {
+            background-color: #e6f4ea;
+            border-left: 4px solid var(--accent);
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            color: #137333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Google Workspace & Forms Study Guide</h1>
+        <p>Comprehensive Overview, Survey Creation & Analysis</p>
+    </header>
+
+    <!-- 1. Google Workspace Overview -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">1</span> Google Workspace Overview</h2>
+        <p style="margin-bottom: 0.75rem; color: var(--text-muted);">A collection of online tools designed to help users create and share documents easily.</p>
+        <ul>
+            <li><strong>Gmail & Meet:</strong> Used for communication.</li>
+            <li><strong>Calendar:</strong> Keeps track of time and meeting schedules.</li>
+            <li><strong>Drive:</strong> Used to store files securely in the cloud.</li>
+            <li><strong>Docs, Sheets & Slides:</strong> Used for creating text documents, spreadsheets, and presentations.</li>
+            <li><strong>Forms:</strong> Dedicated application for conducting surveys and quizzes.</li>
+            <li><strong>Sites:</strong> Used for building websites.</li>
+        </ul>
+    </section>
+
+    <!-- 2. Introduction to Google Forms & Surveys -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">2</span> Introduction to Google Forms & Surveys</h2>
+        <div class="note-box">
+            <strong>Definition:</strong> <em>Google Forms</em> is an online survey software tool used to create surveys, quizzes, and collect information (alternative tools include SurveyMonkey and Zoho). A <em>survey</em> is a method of collecting opinions or data from a group through structured questions.
+        </div>
+        <p style="margin-bottom: 0.5rem; font-weight: 600;">Advantages of Online Surveys:</p>
+        <ul>
+            <li>Can be taken at any time by respondents.</li>
+            <li>Data can be collected from anywhere across the globe.</li>
+            <li>Responses are automatically compiled.</li>
+            <li>Results are easily converted into charts and graphs for analysis.</li>
+        </ul>
+    </section>
+
+    <!-- 3. Accessing Google Forms -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">3</span> Accessing Google Forms</h2>
+        <p style="margin-bottom: 0.75rem;">Navigate to <a href="https://docs.google.com/forms/u/0/" target="_blank" rel="noopener noreferrer">https://docs.google.com/forms/u/0/</a> while signed in to your Google account and select <strong>Blank</strong> to create a new form.</p>
+        <p style="font-size: 0.95rem; color: var(--text-muted);">Standard Interface Controls:</p>
+        <div class="tag-list">
+            <span class="tag">Customize Theme</span>
+            <span class="tag">Preview</span>
+            <span class="tag">Undo</span>
+            <span class="tag">Redo</span>
+            <span class="tag">Send</span>
+            <span class="tag">Questions</span>
+            <span class="tag">Responses</span>
+            <span class="tag">Settings</span>
+            <span class="tag">More</span>
+        </div>
+    </section>
+
+    <!-- 4. Question Types -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">4</span> Creating a Survey & Question Types</h2>
+        <p style="margin-bottom: 0.75rem; color: var(--text-muted);">Google Forms provides specific field types tailored to the type of response required:</p>
+        <div class="grid-cards">
+            <div class="feature-card">
+                <h4>Short Answer</h4>
+                <p>Ideal for brief text entries such as a name, email address, or quick one-line opinion.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Paragraph</h4>
+                <p>Used when respondents need to provide extended, multi-line detailed answers.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Multiple Choice</h4>
+                <p>Objective question format where the form-filler must select exactly one option.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Drop Down</h4>
+                <p>Functions like multiple choice with options hidden in a collapsed list; best for long lists.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Checkboxes</h4>
+                <p>Selected when a question allows the respondent to pick multiple answers at once.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Date</h4>
+                <p>Restricts user entry to a standardized date format (Month/Day/Year).</p>
+            </div>
+            <div class="feature-card">
+                <h4>Linear Scale</h4>
+                <p>Captures opinions or ratings along a customizable numeric scale from 0 to 10.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Form Building Controls -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">5</span> Form Building Controls</h2>
+        <ul>
+            <li><strong>Making Questions Compulsory:</strong> Toggle the <strong>Required</strong> switch to force the form-filler to provide an answer before submitting.</li>
+            <li><strong>Adding Questions:</strong> Click the <strong>+</strong> icon located on the floating side panel.</li>
+            <li><strong>Adding Options:</strong> Click <strong>Add option</strong> to add extra choice selections to Multiple Choice or Drop-Down fields.</li>
+            <li><strong>Form-filler:</strong> The designated term for any user who answers and submits the survey.</li>
+        </ul>
+    </section>
+
+    <!-- 6. Previewing & Sharing Forms -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">6</span> Previewing and Sharing Forms</h2>
+        <ul>
+            <li><strong>Preview:</strong> Click the <strong>Preview (eye)</strong> icon in the top toolbar to view the form exactly as respondents will experience it.</li>
+            <li><strong>Sharing Methods (via Send button):</strong>
+                <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+                    <li><strong>E-mail:</strong> Send the form directly to individual email addresses.</li>
+                    <li><strong>Link Sharing:</strong> Copy a URL to distribute via communication channels or social media.</li>
+                    <li><strong>HTML Embedding:</strong> Copy an <code>&lt;iframe&gt;</code> embed snippet to display the form directly on a website.</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 7. Collecting and Analyzing Responses -->
+    <section class="section-card">
+        <h2 class="section-title"><span class="badge">7</span> Collecting and Analyzing Responses</h2>
+        <p style="margin-bottom: 0.75rem; color: var(--text-muted);">Navigate to the <strong>Responses</strong> tab at the top of the form editor to review survey data across three views:</p>
+        <ul>
+            <li><strong>Summary Tab:</strong> Aggregates all submissions into automated real-time visual charts and graphs.</li>
+            <li><strong>Question & Individual Views:</strong> Allows examining responses on a per-question basis or viewing each complete submission separately.</li>
+            <li><strong>Google Sheets Integration:</strong> Click the <strong>View in Sheets</strong> icon (green spreadsheet button) to link responses directly into a live, auto-updating Google Sheets workbook.</li>
+        </ul>
+    </section>
+</div>
+
+</body>
+</html>
